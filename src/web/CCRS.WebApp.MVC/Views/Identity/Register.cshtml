@@ -1,0 +1,64 @@
+﻿@model CCRS.WebApp.MVC.Models.UserRegister
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+<section class="section-conten padding-y container" style="min-height: 45vh">
+    
+    <vc:Summary></vc:Summary>
+
+    <div class="card mx-auto" style="max-width: 380px; margin-top: 100px;">
+
+        <div class="card-body">
+            <h4 class="card-title mb-4">Welcome!</h4>
+
+            <form asp-route-returnurl="@ViewData["ReturnUrl"]" method="post">
+                <div class="row mb-3">
+                    <div class="col">
+                        <div class="form-group">
+                            <label asp-for="Email"></label>
+                            <input asp-for="Email" class="form-control" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col">
+                        <div class="form-group">
+                            <label asp-for="Password"></label>
+                            <input type="password" asp-for="Password" class="form-control" />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col">
+                        <div class="form-group">
+                            <label asp-for="ConfirmPassword"></label>
+                            <input type="password" asp-for="ConfirmPassword" class="form-control" />
+                            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary w-100">Register</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+        <div class="card-footer text-center">Do you already have an account?<a asp-controller="Identity" asp-action="Login"> Enter</a></div>
+    </div>
+
+</section>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
