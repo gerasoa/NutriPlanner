@@ -1,10 +1,9 @@
 ﻿using CCRS.WebApp.MVC.Models;
-using CCRS.WebApp.MVC.Services;
-using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
-using System.Security.Claims;
 using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 using IAuthenticationService = CCRS.WebApp.MVC.Services.IAuthenticationService;
 
 namespace CCRS.WebApp.MVC.Controllers

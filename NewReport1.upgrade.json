@@ -1,0 +1,529 @@
+{
+  "settings": {
+    "components": {
+      "code": true,
+      "binaries": false
+    },
+    "targetId": "",
+    "targetDisplayName": ".NET 8.0"
+  },
+  "analysisStartTime": "2024-08-20T21:01:07.7077752Z",
+  "analysisEndTime": "2024-08-20T21:01:18.722953Z",
+  "privacyModeHelpUrl": "https://go.microsoft.com/fwlink/?linkid=2270980",
+  "stats": {
+    "summary": {
+      "projects": 5,
+      "issues": 3,
+      "incidents": 24,
+      "effort": 24
+    },
+    "charts": {
+      "severity": {
+        "Mandatory": 4,
+        "Optional": 0,
+        "Potential": 20,
+        "Information": 0
+      },
+      "category": {
+        "NuGet": 23,
+        "Project": 1
+      }
+    }
+  },
+  "projects": [
+    {
+      "path": "src\\services\\CCRS.Catalog.API\\CCRS.Catalog.API.csproj",
+      "startingProject": true,
+      "issues": 2,
+      "storyPoints": 10,
+      "ruleInstances": [
+        {
+          "incidentId": "6420b303-417a-4b9c-9ed7-548dafb3ed64",
+          "ruleId": "NuGet.0002",
+          "projectPath": "src\\services\\CCRS.Catalog.API\\CCRS.Catalog.API.csproj",
+          "state": "Resolved",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.AspNetCore.OpenApi, 7.0.13\n\nRecommendation:\n\nMicrosoft.AspNetCore.OpenApi 8.0.8",
+              "protected": "Microsoft.AspNetCore.OpenApi, 7.0.13\n\nRecommendation:\n\nMicrosoft.AspNetCore.OpenApi 8.0.8"
+            },
+            "kind": "File",
+            "path": "src\\services\\CCRS.Catalog.API\\CCRS.Catalog.API.csproj",
+            "snippet": "Microsoft.AspNetCore.OpenApi, 7.0.13\n\nRecommendation:\n\nMicrosoft.AspNetCore.OpenApi 8.0.8",
+            "protectedSnippet": "Microsoft.AspNetCore.OpenApi, 7.0.13\n\nRecommendation:\n\nMicrosoft.AspNetCore.OpenApi 8.0.8",
+            "label": "Microsoft.AspNetCore.OpenApi 7.0.13"
+          }
+        },
+        {
+          "incidentId": "44cce5de-dd2e-42d7-bdb9-c00e806de658",
+          "ruleId": "NuGet.0002",
+          "projectPath": "src\\services\\CCRS.Catalog.API\\CCRS.Catalog.API.csproj",
+          "state": "Resolved",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.EntityFrameworkCore, 7.0.14\n\nRecommendation:\n\nMicrosoft.EntityFrameworkCore 8.0.8",
+              "protected": "Microsoft.EntityFrameworkCore, 7.0.14\n\nRecommendation:\n\nMicrosoft.EntityFrameworkCore 8.0.8"
+            },
+            "kind": "File",
+            "path": "src\\services\\CCRS.Catalog.API\\CCRS.Catalog.API.csproj",
+            "snippet": "Microsoft.EntityFrameworkCore, 7.0.14\n\nRecommendation:\n\nMicrosoft.EntityFrameworkCore 8.0.8",
+            "protectedSnippet": "Microsoft.EntityFrameworkCore, 7.0.14\n\nRecommendation:\n\nMicrosoft.EntityFrameworkCore 8.0.8",
+            "label": "Microsoft.EntityFrameworkCore 7.0.14"
+          }
+        },
+        {
+          "incidentId": "2cef0106-90a8-4c2c-8067-9e6e4f0ff8c1",
+          "ruleId": "NuGet.0002",
+          "projectPath": "src\\services\\CCRS.Catalog.API\\CCRS.Catalog.API.csproj",
+          "state": "Resolved",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.EntityFrameworkCore.SqlServer, 7.0.14\n\nRecommendation:\n\nMicrosoft.EntityFrameworkCore.SqlServer 8.0.8",
+              "protected": "Microsoft.EntityFrameworkCore.SqlServer, 7.0.14\n\nRecommendation:\n\nMicrosoft.EntityFrameworkCore.SqlServer 8.0.8"
+            },
+            "kind": "File",
+            "path": "src\\services\\CCRS.Catalog.API\\CCRS.Catalog.API.csproj",
+            "snippet": "Microsoft.EntityFrameworkCore.SqlServer, 7.0.14\n\nRecommendation:\n\nMicrosoft.EntityFrameworkCore.SqlServer 8.0.8",
+            "protectedSnippet": "Microsoft.EntityFrameworkCore.SqlServer, 7.0.14\n\nRecommendation:\n\nMicrosoft.EntityFrameworkCore.SqlServer 8.0.8",
+            "label": "Microsoft.EntityFrameworkCore.SqlServer 7.0.14"
+          }
+        },
+        {
+          "incidentId": "d7a50186-21ad-4ada-86ec-64e308fbad4a",
+          "ruleId": "NuGet.0002",
+          "projectPath": "src\\services\\CCRS.Catalog.API\\CCRS.Catalog.API.csproj",
+          "state": "Resolved",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.EntityFrameworkCore.Abstractions, 7.0.14\n\nRecommendation:\n\nMicrosoft.EntityFrameworkCore.Abstractions 8.0.8",
+              "protected": "Microsoft.EntityFrameworkCore.Abstractions, 7.0.14\n\nRecommendation:\n\nMicrosoft.EntityFrameworkCore.Abstractions 8.0.8"
+            },
+            "kind": "File",
+            "path": "src\\services\\CCRS.Catalog.API\\CCRS.Catalog.API.csproj",
+            "snippet": "Microsoft.EntityFrameworkCore.Abstractions, 7.0.14\n\nRecommendation:\n\nMicrosoft.EntityFrameworkCore.Abstractions 8.0.8",
+            "protectedSnippet": "Microsoft.EntityFrameworkCore.Abstractions, 7.0.14\n\nRecommendation:\n\nMicrosoft.EntityFrameworkCore.Abstractions 8.0.8",
+            "label": "Microsoft.EntityFrameworkCore.Abstractions 7.0.14"
+          }
+        },
+        {
+          "incidentId": "944773fe-379d-4a9f-8b46-52127cb89fe9",
+          "ruleId": "NuGet.0001",
+          "projectPath": "src\\services\\CCRS.Catalog.API\\CCRS.Catalog.API.csproj",
+          "state": "Resolved",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.VisualStudio.Azure.Containers.Tools.Targets, 1.19.4\n\nRecommendation:\n\nNo supported version found",
+              "protected": "Microsoft.VisualStudio.Azure.Containers.Tools.Targets, 1.19.4\n\nRecommendation:\n\nNo supported version found"
+            },
+            "kind": "File",
+            "path": "src\\services\\CCRS.Catalog.API\\CCRS.Catalog.API.csproj",
+            "snippet": "Microsoft.VisualStudio.Azure.Containers.Tools.Targets, 1.19.4\n\nRecommendation:\n\nNo supported version found",
+            "protectedSnippet": "Microsoft.VisualStudio.Azure.Containers.Tools.Targets, 1.19.4\n\nRecommendation:\n\nNo supported version found",
+            "label": "Microsoft.VisualStudio.Azure.Containers.Tools.Targets 1.19.4"
+          }
+        },
+        {
+          "incidentId": "f45c54e4-3a2e-4363-9b7c-52a4734f690c",
+          "ruleId": "NuGet.0002",
+          "projectPath": "src\\services\\CCRS.Catalog.API\\CCRS.Catalog.API.csproj",
+          "state": "Resolved",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.AspNetCore.Authentication.JwtBearer, 7.0.14\n\nRecommendation:\n\nMicrosoft.AspNetCore.Authentication.JwtBearer 8.0.8",
+              "protected": "Microsoft.AspNetCore.Authentication.JwtBearer, 7.0.14\n\nRecommendation:\n\nMicrosoft.AspNetCore.Authentication.JwtBearer 8.0.8"
+            },
+            "kind": "File",
+            "path": "src\\services\\CCRS.Catalog.API\\CCRS.Catalog.API.csproj",
+            "snippet": "Microsoft.AspNetCore.Authentication.JwtBearer, 7.0.14\n\nRecommendation:\n\nMicrosoft.AspNetCore.Authentication.JwtBearer 8.0.8",
+            "protectedSnippet": "Microsoft.AspNetCore.Authentication.JwtBearer, 7.0.14\n\nRecommendation:\n\nMicrosoft.AspNetCore.Authentication.JwtBearer 8.0.8",
+            "label": "Microsoft.AspNetCore.Authentication.JwtBearer 7.0.14"
+          }
+        },
+        {
+          "incidentId": "27d0ad19-0061-4541-8b46-5bd8a95deaac",
+          "ruleId": "NuGet.0002",
+          "projectPath": "src\\services\\CCRS.Catalog.API\\CCRS.Catalog.API.csproj",
+          "state": "Resolved",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.AspNetCore.Identity.EntityFrameworkCore, 7.0.14\n\nRecommendation:\n\nMicrosoft.AspNetCore.Identity.EntityFrameworkCore 8.0.8",
+              "protected": "Microsoft.AspNetCore.Identity.EntityFrameworkCore, 7.0.14\n\nRecommendation:\n\nMicrosoft.AspNetCore.Identity.EntityFrameworkCore 8.0.8"
+            },
+            "kind": "File",
+            "path": "src\\services\\CCRS.Catalog.API\\CCRS.Catalog.API.csproj",
+            "snippet": "Microsoft.AspNetCore.Identity.EntityFrameworkCore, 7.0.14\n\nRecommendation:\n\nMicrosoft.AspNetCore.Identity.EntityFrameworkCore 8.0.8",
+            "protectedSnippet": "Microsoft.AspNetCore.Identity.EntityFrameworkCore, 7.0.14\n\nRecommendation:\n\nMicrosoft.AspNetCore.Identity.EntityFrameworkCore 8.0.8",
+            "label": "Microsoft.AspNetCore.Identity.EntityFrameworkCore 7.0.14"
+          }
+        },
+        {
+          "incidentId": "1f62d915-bf40-4b7e-821b-762b68ddf24a",
+          "ruleId": "NuGet.0002",
+          "projectPath": "src\\services\\CCRS.Catalog.API\\CCRS.Catalog.API.csproj",
+          "state": "Resolved",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.EntityFrameworkCore.Relational, 7.0.14\n\nRecommendation:\n\nMicrosoft.EntityFrameworkCore.Relational 8.0.8",
+              "protected": "Microsoft.EntityFrameworkCore.Relational, 7.0.14\n\nRecommendation:\n\nMicrosoft.EntityFrameworkCore.Relational 8.0.8"
+            },
+            "kind": "File",
+            "path": "src\\services\\CCRS.Catalog.API\\CCRS.Catalog.API.csproj",
+            "snippet": "Microsoft.EntityFrameworkCore.Relational, 7.0.14\n\nRecommendation:\n\nMicrosoft.EntityFrameworkCore.Relational 8.0.8",
+            "protectedSnippet": "Microsoft.EntityFrameworkCore.Relational, 7.0.14\n\nRecommendation:\n\nMicrosoft.EntityFrameworkCore.Relational 8.0.8",
+            "label": "Microsoft.EntityFrameworkCore.Relational 7.0.14"
+          }
+        },
+        {
+          "incidentId": "f359abfc-6f2c-4397-8b42-674fb7721af4",
+          "ruleId": "NuGet.0002",
+          "projectPath": "src\\services\\CCRS.Catalog.API\\CCRS.Catalog.API.csproj",
+          "state": "Resolved",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.AspNetCore.Identity.UI, 7.0.14\n\nRecommendation:\n\nMicrosoft.AspNetCore.Identity.UI 8.0.8",
+              "protected": "Microsoft.AspNetCore.Identity.UI, 7.0.14\n\nRecommendation:\n\nMicrosoft.AspNetCore.Identity.UI 8.0.8"
+            },
+            "kind": "File",
+            "path": "src\\services\\CCRS.Catalog.API\\CCRS.Catalog.API.csproj",
+            "snippet": "Microsoft.AspNetCore.Identity.UI, 7.0.14\n\nRecommendation:\n\nMicrosoft.AspNetCore.Identity.UI 8.0.8",
+            "protectedSnippet": "Microsoft.AspNetCore.Identity.UI, 7.0.14\n\nRecommendation:\n\nMicrosoft.AspNetCore.Identity.UI 8.0.8",
+            "label": "Microsoft.AspNetCore.Identity.UI 7.0.14"
+          }
+        },
+        {
+          "incidentId": "d0058be8-d46c-468d-a3f2-b24085a9f9b5",
+          "ruleId": "NuGet.0002",
+          "projectPath": "src\\services\\CCRS.Catalog.API\\CCRS.Catalog.API.csproj",
+          "state": "Resolved",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.EntityFrameworkCore.Tools, 7.0.14\n\nRecommendation:\n\nMicrosoft.EntityFrameworkCore.Tools 8.0.8",
+              "protected": "Microsoft.EntityFrameworkCore.Tools, 7.0.14\n\nRecommendation:\n\nMicrosoft.EntityFrameworkCore.Tools 8.0.8"
+            },
+            "kind": "File",
+            "path": "src\\services\\CCRS.Catalog.API\\CCRS.Catalog.API.csproj",
+            "snippet": "Microsoft.EntityFrameworkCore.Tools, 7.0.14\n\nRecommendation:\n\nMicrosoft.EntityFrameworkCore.Tools 8.0.8",
+            "protectedSnippet": "Microsoft.EntityFrameworkCore.Tools, 7.0.14\n\nRecommendation:\n\nMicrosoft.EntityFrameworkCore.Tools 8.0.8",
+            "label": "Microsoft.EntityFrameworkCore.Tools 7.0.14"
+          }
+        }
+      ]
+    },
+    {
+      "path": "src\\building blocks\\CCRS.Core\\CCRS.Core.csproj",
+      "startingProject": true,
+      "issues": 1,
+      "storyPoints": 1,
+      "ruleInstances": [
+        {
+          "incidentId": "1519c688-5b63-45fd-ba34-deb001b999aa",
+          "ruleId": "Project.0002",
+          "projectPath": "src\\building blocks\\CCRS.Core\\CCRS.Core.csproj",
+          "state": "Resolved",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Current: net7.0\nNew: net8.0",
+              "protected": "Current: net7.0\nNew: net8.0"
+            },
+            "kind": "File",
+            "path": "src\\building blocks\\CCRS.Core\\CCRS.Core.csproj",
+            "snippet": "Current: net7.0\nNew: net8.0",
+            "protectedSnippet": "Current: net7.0\nNew: net8.0"
+          }
+        }
+      ]
+    },
+    {
+      "path": "src\\services\\CCRS.Identity.API\\CCRS.Identity.API.csproj",
+      "startingProject": true,
+      "issues": 2,
+      "storyPoints": 10,
+      "ruleInstances": [
+        {
+          "incidentId": "ba86dd1c-602e-43dd-aa5a-581081885833",
+          "ruleId": "NuGet.0002",
+          "projectPath": "src\\services\\CCRS.Identity.API\\CCRS.Identity.API.csproj",
+          "state": "Resolved",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.AspNetCore.OpenApi, 7.0.13\n\nRecommendation:\n\nMicrosoft.AspNetCore.OpenApi 8.0.8",
+              "protected": "Microsoft.AspNetCore.OpenApi, 7.0.13\n\nRecommendation:\n\nMicrosoft.AspNetCore.OpenApi 8.0.8"
+            },
+            "kind": "File",
+            "path": "src\\services\\CCRS.Identity.API\\CCRS.Identity.API.csproj",
+            "snippet": "Microsoft.AspNetCore.OpenApi, 7.0.13\n\nRecommendation:\n\nMicrosoft.AspNetCore.OpenApi 8.0.8",
+            "protectedSnippet": "Microsoft.AspNetCore.OpenApi, 7.0.13\n\nRecommendation:\n\nMicrosoft.AspNetCore.OpenApi 8.0.8",
+            "label": "Microsoft.AspNetCore.OpenApi 7.0.13"
+          }
+        },
+        {
+          "incidentId": "c98b76e9-4602-47df-bb0d-24a7aaa3d7ca",
+          "ruleId": "NuGet.0002",
+          "projectPath": "src\\services\\CCRS.Identity.API\\CCRS.Identity.API.csproj",
+          "state": "Resolved",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.EntityFrameworkCore, 7.0.14\n\nRecommendation:\n\nMicrosoft.EntityFrameworkCore 8.0.8",
+              "protected": "Microsoft.EntityFrameworkCore, 7.0.14\n\nRecommendation:\n\nMicrosoft.EntityFrameworkCore 8.0.8"
+            },
+            "kind": "File",
+            "path": "src\\services\\CCRS.Identity.API\\CCRS.Identity.API.csproj",
+            "snippet": "Microsoft.EntityFrameworkCore, 7.0.14\n\nRecommendation:\n\nMicrosoft.EntityFrameworkCore 8.0.8",
+            "protectedSnippet": "Microsoft.EntityFrameworkCore, 7.0.14\n\nRecommendation:\n\nMicrosoft.EntityFrameworkCore 8.0.8",
+            "label": "Microsoft.EntityFrameworkCore 7.0.14"
+          }
+        },
+        {
+          "incidentId": "46d56c22-c7ec-4879-b7f5-81a162fcadab",
+          "ruleId": "NuGet.0002",
+          "projectPath": "src\\services\\CCRS.Identity.API\\CCRS.Identity.API.csproj",
+          "state": "Resolved",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.EntityFrameworkCore.SqlServer, 7.0.14\n\nRecommendation:\n\nMicrosoft.EntityFrameworkCore.SqlServer 8.0.8",
+              "protected": "Microsoft.EntityFrameworkCore.SqlServer, 7.0.14\n\nRecommendation:\n\nMicrosoft.EntityFrameworkCore.SqlServer 8.0.8"
+            },
+            "kind": "File",
+            "path": "src\\services\\CCRS.Identity.API\\CCRS.Identity.API.csproj",
+            "snippet": "Microsoft.EntityFrameworkCore.SqlServer, 7.0.14\n\nRecommendation:\n\nMicrosoft.EntityFrameworkCore.SqlServer 8.0.8",
+            "protectedSnippet": "Microsoft.EntityFrameworkCore.SqlServer, 7.0.14\n\nRecommendation:\n\nMicrosoft.EntityFrameworkCore.SqlServer 8.0.8",
+            "label": "Microsoft.EntityFrameworkCore.SqlServer 7.0.14"
+          }
+        },
+        {
+          "incidentId": "aa45b660-db14-4e42-af5e-b28d98e9c7fa",
+          "ruleId": "NuGet.0002",
+          "projectPath": "src\\services\\CCRS.Identity.API\\CCRS.Identity.API.csproj",
+          "state": "Resolved",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.EntityFrameworkCore.Abstractions, 7.0.14\n\nRecommendation:\n\nMicrosoft.EntityFrameworkCore.Abstractions 8.0.8",
+              "protected": "Microsoft.EntityFrameworkCore.Abstractions, 7.0.14\n\nRecommendation:\n\nMicrosoft.EntityFrameworkCore.Abstractions 8.0.8"
+            },
+            "kind": "File",
+            "path": "src\\services\\CCRS.Identity.API\\CCRS.Identity.API.csproj",
+            "snippet": "Microsoft.EntityFrameworkCore.Abstractions, 7.0.14\n\nRecommendation:\n\nMicrosoft.EntityFrameworkCore.Abstractions 8.0.8",
+            "protectedSnippet": "Microsoft.EntityFrameworkCore.Abstractions, 7.0.14\n\nRecommendation:\n\nMicrosoft.EntityFrameworkCore.Abstractions 8.0.8",
+            "label": "Microsoft.EntityFrameworkCore.Abstractions 7.0.14"
+          }
+        },
+        {
+          "incidentId": "055b08a6-9d24-4fe9-97fd-15a0eaebc025",
+          "ruleId": "NuGet.0001",
+          "projectPath": "src\\services\\CCRS.Identity.API\\CCRS.Identity.API.csproj",
+          "state": "Resolved",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.VisualStudio.Azure.Containers.Tools.Targets, 1.19.4\n\nRecommendation:\n\nNo supported version found",
+              "protected": "Microsoft.VisualStudio.Azure.Containers.Tools.Targets, 1.19.4\n\nRecommendation:\n\nNo supported version found"
+            },
+            "kind": "File",
+            "path": "src\\services\\CCRS.Identity.API\\CCRS.Identity.API.csproj",
+            "snippet": "Microsoft.VisualStudio.Azure.Containers.Tools.Targets, 1.19.4\n\nRecommendation:\n\nNo supported version found",
+            "protectedSnippet": "Microsoft.VisualStudio.Azure.Containers.Tools.Targets, 1.19.4\n\nRecommendation:\n\nNo supported version found",
+            "label": "Microsoft.VisualStudio.Azure.Containers.Tools.Targets 1.19.4"
+          }
+        },
+        {
+          "incidentId": "5dde6473-ea99-48df-8593-a3b4a6ce37bc",
+          "ruleId": "NuGet.0002",
+          "projectPath": "src\\services\\CCRS.Identity.API\\CCRS.Identity.API.csproj",
+          "state": "Resolved",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.AspNetCore.Authentication.JwtBearer, 7.0.14\n\nRecommendation:\n\nMicrosoft.AspNetCore.Authentication.JwtBearer 8.0.8",
+              "protected": "Microsoft.AspNetCore.Authentication.JwtBearer, 7.0.14\n\nRecommendation:\n\nMicrosoft.AspNetCore.Authentication.JwtBearer 8.0.8"
+            },
+            "kind": "File",
+            "path": "src\\services\\CCRS.Identity.API\\CCRS.Identity.API.csproj",
+            "snippet": "Microsoft.AspNetCore.Authentication.JwtBearer, 7.0.14\n\nRecommendation:\n\nMicrosoft.AspNetCore.Authentication.JwtBearer 8.0.8",
+            "protectedSnippet": "Microsoft.AspNetCore.Authentication.JwtBearer, 7.0.14\n\nRecommendation:\n\nMicrosoft.AspNetCore.Authentication.JwtBearer 8.0.8",
+            "label": "Microsoft.AspNetCore.Authentication.JwtBearer 7.0.14"
+          }
+        },
+        {
+          "incidentId": "ee091431-5c5e-48bf-a599-819fc68fe825",
+          "ruleId": "NuGet.0002",
+          "projectPath": "src\\services\\CCRS.Identity.API\\CCRS.Identity.API.csproj",
+          "state": "Resolved",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.AspNetCore.Identity.EntityFrameworkCore, 7.0.14\n\nRecommendation:\n\nMicrosoft.AspNetCore.Identity.EntityFrameworkCore 8.0.8",
+              "protected": "Microsoft.AspNetCore.Identity.EntityFrameworkCore, 7.0.14\n\nRecommendation:\n\nMicrosoft.AspNetCore.Identity.EntityFrameworkCore 8.0.8"
+            },
+            "kind": "File",
+            "path": "src\\services\\CCRS.Identity.API\\CCRS.Identity.API.csproj",
+            "snippet": "Microsoft.AspNetCore.Identity.EntityFrameworkCore, 7.0.14\n\nRecommendation:\n\nMicrosoft.AspNetCore.Identity.EntityFrameworkCore 8.0.8",
+            "protectedSnippet": "Microsoft.AspNetCore.Identity.EntityFrameworkCore, 7.0.14\n\nRecommendation:\n\nMicrosoft.AspNetCore.Identity.EntityFrameworkCore 8.0.8",
+            "label": "Microsoft.AspNetCore.Identity.EntityFrameworkCore 7.0.14"
+          }
+        },
+        {
+          "incidentId": "8e0656b0-27f3-44c1-a5e0-86bc8171998d",
+          "ruleId": "NuGet.0002",
+          "projectPath": "src\\services\\CCRS.Identity.API\\CCRS.Identity.API.csproj",
+          "state": "Resolved",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.EntityFrameworkCore.Relational, 7.0.14\n\nRecommendation:\n\nMicrosoft.EntityFrameworkCore.Relational 8.0.8",
+              "protected": "Microsoft.EntityFrameworkCore.Relational, 7.0.14\n\nRecommendation:\n\nMicrosoft.EntityFrameworkCore.Relational 8.0.8"
+            },
+            "kind": "File",
+            "path": "src\\services\\CCRS.Identity.API\\CCRS.Identity.API.csproj",
+            "snippet": "Microsoft.EntityFrameworkCore.Relational, 7.0.14\n\nRecommendation:\n\nMicrosoft.EntityFrameworkCore.Relational 8.0.8",
+            "protectedSnippet": "Microsoft.EntityFrameworkCore.Relational, 7.0.14\n\nRecommendation:\n\nMicrosoft.EntityFrameworkCore.Relational 8.0.8",
+            "label": "Microsoft.EntityFrameworkCore.Relational 7.0.14"
+          }
+        },
+        {
+          "incidentId": "4f550a99-b475-4780-953c-fdb17f0b95e9",
+          "ruleId": "NuGet.0002",
+          "projectPath": "src\\services\\CCRS.Identity.API\\CCRS.Identity.API.csproj",
+          "state": "Resolved",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.AspNetCore.Identity.UI, 7.0.14\n\nRecommendation:\n\nMicrosoft.AspNetCore.Identity.UI 8.0.8",
+              "protected": "Microsoft.AspNetCore.Identity.UI, 7.0.14\n\nRecommendation:\n\nMicrosoft.AspNetCore.Identity.UI 8.0.8"
+            },
+            "kind": "File",
+            "path": "src\\services\\CCRS.Identity.API\\CCRS.Identity.API.csproj",
+            "snippet": "Microsoft.AspNetCore.Identity.UI, 7.0.14\n\nRecommendation:\n\nMicrosoft.AspNetCore.Identity.UI 8.0.8",
+            "protectedSnippet": "Microsoft.AspNetCore.Identity.UI, 7.0.14\n\nRecommendation:\n\nMicrosoft.AspNetCore.Identity.UI 8.0.8",
+            "label": "Microsoft.AspNetCore.Identity.UI 7.0.14"
+          }
+        },
+        {
+          "incidentId": "a5d09fb9-68b6-45c8-ad3a-8e5780dc0f55",
+          "ruleId": "NuGet.0002",
+          "projectPath": "src\\services\\CCRS.Identity.API\\CCRS.Identity.API.csproj",
+          "state": "Resolved",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.EntityFrameworkCore.Tools, 7.0.14\n\nRecommendation:\n\nMicrosoft.EntityFrameworkCore.Tools 8.0.8",
+              "protected": "Microsoft.EntityFrameworkCore.Tools, 7.0.14\n\nRecommendation:\n\nMicrosoft.EntityFrameworkCore.Tools 8.0.8"
+            },
+            "kind": "File",
+            "path": "src\\services\\CCRS.Identity.API\\CCRS.Identity.API.csproj",
+            "snippet": "Microsoft.EntityFrameworkCore.Tools, 7.0.14\n\nRecommendation:\n\nMicrosoft.EntityFrameworkCore.Tools 8.0.8",
+            "protectedSnippet": "Microsoft.EntityFrameworkCore.Tools, 7.0.14\n\nRecommendation:\n\nMicrosoft.EntityFrameworkCore.Tools 8.0.8",
+            "label": "Microsoft.EntityFrameworkCore.Tools 7.0.14"
+          }
+        }
+      ]
+    },
+    {
+      "path": "src\\building blocks\\CCRS.WebApi.Core\\CCRS.WebAPI.Core.csproj",
+      "startingProject": true,
+      "issues": 1,
+      "storyPoints": 1,
+      "ruleInstances": [
+        {
+          "incidentId": "56a29222-e653-4ea7-abe4-a9f712f26e98",
+          "ruleId": "NuGet.0002",
+          "projectPath": "src\\building blocks\\CCRS.WebApi.Core\\CCRS.WebAPI.Core.csproj",
+          "state": "Resolved",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.AspNetCore.Authentication.JwtBearer, 7.0.14\n\nRecommendation:\n\nMicrosoft.AspNetCore.Authentication.JwtBearer 8.0.8",
+              "protected": "Microsoft.AspNetCore.Authentication.JwtBearer, 7.0.14\n\nRecommendation:\n\nMicrosoft.AspNetCore.Authentication.JwtBearer 8.0.8"
+            },
+            "kind": "File",
+            "path": "src\\building blocks\\CCRS.WebApi.Core\\CCRS.WebAPI.Core.csproj",
+            "snippet": "Microsoft.AspNetCore.Authentication.JwtBearer, 7.0.14\n\nRecommendation:\n\nMicrosoft.AspNetCore.Authentication.JwtBearer 8.0.8",
+            "protectedSnippet": "Microsoft.AspNetCore.Authentication.JwtBearer, 7.0.14\n\nRecommendation:\n\nMicrosoft.AspNetCore.Authentication.JwtBearer 8.0.8",
+            "label": "Microsoft.AspNetCore.Authentication.JwtBearer 7.0.14"
+          }
+        }
+      ]
+    },
+    {
+      "path": "src\\web\\CCRS.WebApp.MVC\\CCRS.WebApp.MVC.csproj",
+      "startingProject": true,
+      "issues": 2,
+      "storyPoints": 2,
+      "ruleInstances": [
+        {
+          "incidentId": "4c895558-af9e-470b-81b8-05150d532321",
+          "ruleId": "NuGet.0002",
+          "projectPath": "src\\web\\CCRS.WebApp.MVC\\CCRS.WebApp.MVC.csproj",
+          "state": "Resolved",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, 7.0.14\n\nRecommendation:\n\nMicrosoft.AspNetCore.Mvc.Razor.RuntimeCompilation 8.0.8",
+              "protected": "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, 7.0.14\n\nRecommendation:\n\nMicrosoft.AspNetCore.Mvc.Razor.RuntimeCompilation 8.0.8"
+            },
+            "kind": "File",
+            "path": "src\\web\\CCRS.WebApp.MVC\\CCRS.WebApp.MVC.csproj",
+            "snippet": "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, 7.0.14\n\nRecommendation:\n\nMicrosoft.AspNetCore.Mvc.Razor.RuntimeCompilation 8.0.8",
+            "protectedSnippet": "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation, 7.0.14\n\nRecommendation:\n\nMicrosoft.AspNetCore.Mvc.Razor.RuntimeCompilation 8.0.8",
+            "label": "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation 7.0.14"
+          }
+        },
+        {
+          "incidentId": "504bfc97-327d-44a7-a5a9-93ff6e14925b",
+          "ruleId": "NuGet.0001",
+          "projectPath": "src\\web\\CCRS.WebApp.MVC\\CCRS.WebApp.MVC.csproj",
+          "state": "Resolved",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.VisualStudio.Azure.Containers.Tools.Targets, 1.19.4\n\nRecommendation:\n\nNo supported version found",
+              "protected": "Microsoft.VisualStudio.Azure.Containers.Tools.Targets, 1.19.4\n\nRecommendation:\n\nNo supported version found"
+            },
+            "kind": "File",
+            "path": "src\\web\\CCRS.WebApp.MVC\\CCRS.WebApp.MVC.csproj",
+            "snippet": "Microsoft.VisualStudio.Azure.Containers.Tools.Targets, 1.19.4\n\nRecommendation:\n\nNo supported version found",
+            "protectedSnippet": "Microsoft.VisualStudio.Azure.Containers.Tools.Targets, 1.19.4\n\nRecommendation:\n\nNo supported version found",
+            "label": "Microsoft.VisualStudio.Azure.Containers.Tools.Targets 1.19.4"
+          }
+        }
+      ]
+    }
+  ],
+  "rules": {
+    "NuGet.0002": {
+      "id": "NuGet.0002",
+      "description": "NuGet package upgrade is recommended for selected target framework.\n\nStandard .NET packages are recommended to have versions matching version of .NET that project targets.\n\nSome other packages also are known to work better for selected target frameworks.",
+      "label": "NuGet package upgrade is recommended",
+      "severity": "Potential",
+      "effort": 1,
+      "links": [
+        {
+          "url": "https://go.microsoft.com/fwlink/?linkid=2262530",
+          "isCustom": false
+        }
+      ]
+    },
+    "Project.0002": {
+      "id": "Project.0002",
+      "description": "Project\u0027s target framework(s) needs to be changed to the new target framework that you selected for this upgrade.\n\nDuring upgrade target framework will be adjusted to correspinding platform when applicable. In some cases project would result in multiple target frameworks after the upgrade if it was using features that now have their own platforms in moderrn .NET frameworks (windows, iOS, Android etc).",
+      "label": "Project\u0027s target framework(s) needs to be changed",
+      "severity": "Mandatory",
+      "effort": 1,
+      "links": [
+        {
+          "title": "Overview of porting from .NET Framework to .NET",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2265227",
+          "isCustom": false
+        },
+        {
+          "title": ".NET project SDKs",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2265226",
+          "isCustom": false
+        }
+      ]
+    },
+    "NuGet.0001": {
+      "id": "NuGet.0001",
+      "description": "NuGet package is incompatible with selected target framework.\n\nPackage needs to be upgraded to a version supporting selected project target framework. If there no new package versions supporting new target framework, different package needs to be used and all code needs to be upgraded to new API.",
+      "label": "NuGet package is incompatible",
+      "severity": "Mandatory",
+      "effort": 1,
+      "links": [
+        {
+          "url": "https://go.microsoft.com/fwlink/?linkid=2262529",
+          "isCustom": false
+        }
+      ]
+    }
+  }
+}
