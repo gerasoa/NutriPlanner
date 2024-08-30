@@ -396,3 +396,4 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+/src/services/CCRS.Catalog.API/Migrations/_CatalogContextModelSnapshot - Copy.cs
