@@ -1,4 +1,6 @@
-﻿namespace CCRS.Catalog.API.Models
+﻿using CCRS.Core.DomainObjects;
+
+namespace CCRS.Catalog.API.Models
 {
     public class Category
     {

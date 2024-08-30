@@ -18,22 +18,46 @@ namespace CCRS.Catalog.API.Data.Repository
 
         public async Task<IEnumerable<Recipe>> GetAllRecipesAsync()
         {
-            return await _context.Recipes.AsNoTracking().ToListAsync();
+            return await _context.Recipe.AsNoTracking().ToListAsync();
         }
 
         public async Task<Recipe> GetRecipeByIdAsync(Guid id)
         {
-            return await _context.Recipes.FindAsync(id);
+            var recipe = await _context.Recipe
+                         .Include(v => v.Feedbacks)
+                         .Include(r => r.DirectionsGroup)
+                         .ThenInclude(ig => ig.Ingredients)
+                         .ThenInclude(m => m.Measure)
+                         .Include(r => r.DirectionsGroup)
+                         .ThenInclude(pg => pg.Directions)
+                         .Include(c => c.Category)
+                         .Include(c => c.Difficulty)
+                         .FirstOrDefaultAsync(r => r.Id == id);
+
+            if(recipe == null)
+            {
+                return null;    
+            }
+
+            recipe.DirectionsGroup = recipe.DirectionsGroup.OrderBy(dg => dg.OrderNumber).ToList();
+
+            foreach(var directionsGroup in recipe.DirectionsGroup)
+            {
+                directionsGroup.Directions = directionsGroup.Directions.OrderBy(d => d.OrderNumber).ToList();
+            }
+
+            return recipe;
+
         }
 
         public void Update(Recipe recipe)
         {
-            _context.Recipes.Update(recipe);
+            _context.Recipe.Update(recipe);
         }
 
         public void Add(Recipe recipe)
         {
-            _context.Recipes.Add(recipe);
+            _context.Recipe.Add(recipe);
         }
 
         public void Dispose()

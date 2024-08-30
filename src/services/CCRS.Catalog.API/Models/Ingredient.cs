@@ -1,8 +1,10 @@
-﻿namespace CCRS.Catalog.API.Models
+﻿using CCRS.Core.DomainObjects;
+
+namespace CCRS.Catalog.API.Models
 {
-    public class Ingredient
+    public class Ingredient : Entity
     {
-        public int Id { get; set; }
+        //public int Id { get; set; }
         public string Name { get; set; }
         public int Quantity { get; set; }
         public Measure Measure { get; set; }
