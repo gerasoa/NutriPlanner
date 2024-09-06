@@ -13,14 +13,16 @@ namespace CCRS.Catalog.API.Data
         public CatalogContext(DbContextOptions<CatalogContext> options) 
             : base(options) { }
 
-        public DbSet<Recipe> Recipe { get; set; }
-        public DbSet<Ingredient> Ingredient { get; set; }
-        public DbSet<Measure> Measure { get; set; }
-        public DbSet<Category> Category { get; set; }
-        public DbSet<Difficulty> Dificulty { get; set; }
+        public DbSet<Recipe> Recipes { get; set; }
+        public DbSet<Ingredient> Ingredients { get; set; }
+        public DbSet<IngredientMeasure> IngredientMeasures { get; set; }
+        public DbSet<Measure> Measures { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Difficulty> Difficulties { get; set; }
         public DbSet<Direction> Directions { get; set; }
-        public DbSet<DirectionsGroup> DirectionsGroup { get; set; }        
-        public DbSet<Feedback> Feedback { get; set; }
+        public DbSet<RecipeDirection> RecipeDirections { get; set; }        
+        public DbSet<Feedback> Feedbacks { get; set; }
+        public DbSet<IngredientDirection> IngredientDirections { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -28,29 +30,70 @@ namespace CCRS.Catalog.API.Data
                 e => e.GetProperties().Where(p => p.ClrType == typeof(string)))) 
                 property.SetColumnType("varchar(200)");
 
+            //Difficulty
+            modelBuilder.Entity<Recipe>()
+               .HasOne(r => r.Difficulty) // Receita tem uma Difficulty
+               .WithMany(r => r.Recipe) // Difficulty tem muitas Recipes
+               .HasForeignKey(c => c.DifficultyId) // Chave estrangeira na Receita
+               .OnDelete(DeleteBehavior.Restrict); // Configuração de exclusão
+
+            //Category
             modelBuilder.Entity<Recipe>()
                .HasOne(r => r.Category)
-               .WithMany()
-               .HasForeignKey(r => r.CategoryId)
-               .OnDelete(DeleteBehavior.Restrict); // Defina o comportamento de deleção
+               .WithMany(r => r.Recipe)
+               .HasForeignKey(c => c.CategoryId)
+               .OnDelete(DeleteBehavior.Restrict);
+            
+            //Feedback
+            modelBuilder.Entity<Feedback>()
+               .HasOne(r => r.Recipe)
+               .WithMany(r => r.Feedbacks)
+               .HasForeignKey(c => c.RecipeId)
+               .OnDelete(DeleteBehavior.Restrict);
 
-            //Configuração da relação entre Recipe e Feedback
-            modelBuilder.Entity<Recipe>()
-                .HasMany(r => r.Feedbacks)
-                .WithOne(f => f.Recipe)
-                .HasForeignKey(f => f.RecipeId)
-                .OnDelete(DeleteBehavior.Restrict);  // Define o comportamento em caso de exclusão
+            //RecipeDirection - Recipes
+            modelBuilder.Entity<RecipeDirection>()
+                .HasOne(r => r.Recipe)
+                .WithMany(r => r.RecipeDirections)
+                .HasForeignKey(r => r.RecipeId)
+                .OnDelete(DeleteBehavior.Restrict);
 
-            // Configuração da relação entre Feedback e User (se a entidade User existir)
-            //modelBuilder.Entity<Feedback>()
-            //    .HasOne<User>()  // Inclua o tipo User se a entidade User estiver definida
-            //    .WithMany(u => u.Feedback)
-            //    .HasForeignKey(f => f.UserId)
-            //    .OnDelete(DeleteBehavior.Restrict);  // Define o comportamento em caso de exclusão
+            //RecipeDirections - IngredientDirections
+            modelBuilder.Entity<IngredientDirection>()
+                .HasOne(r => r.RecipeDirection)
+                .WithMany(r => r.IngredientDirections)
+                .HasForeignKey(r => r.RecipeDirectionId)
+                .OnDelete(DeleteBehavior.Restrict);
 
+            //IngredientMeasure - IngredientDirections
+            modelBuilder.Entity<IngredientDirection>()
+                .HasOne(r => r.IngredientMeasure)
+                .WithMany(r => r.IngredientDirections)
+                .HasForeignKey(r => r.IngredientMeasureId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            //Ingredient - IngredientMeasure
+           modelBuilder.Entity<IngredientMeasure>()
+                .HasOne(r => r.Ingredient)
+                .WithMany(r => r.IngredientMeasures)
+                .HasForeignKey(r => r.IngredientId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            //Measure - IngredientMeasure
+            modelBuilder.Entity<IngredientMeasure>()
+                 .HasOne(r => r.Measure)
+                 .WithMany(r => r.IngredientMeasure)
+                 .HasForeignKey(r => r.MeasureId)
+                 .OnDelete(DeleteBehavior.Restrict);
+
+
+            modelBuilder.Entity<Direction>()
+                .HasOne(r => r.RecipeDirection)
+                .WithMany(r => r.Directions)
+                .HasForeignKey(r => r.RecipeDirectionId)
+                .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(CatalogContext).Assembly);
-
         }
 
         public async Task<bool> Commit()
