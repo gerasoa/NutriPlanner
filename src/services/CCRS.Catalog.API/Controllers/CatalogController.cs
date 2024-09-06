@@ -20,7 +20,7 @@ namespace CCRS.Catalog.API.Controllers
         }
 
         [HttpGet("catalog/recipes/{id}")]
-        public async Task<Recipe> RecipeDetail(Guid id)
+        public async Task<Recipe> RecipeDetail(int id)
         {            
             return await _recipeRepository.GetRecipeByIdAsync(id);
         }

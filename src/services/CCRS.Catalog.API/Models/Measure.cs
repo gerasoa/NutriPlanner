@@ -9,12 +9,10 @@ namespace CCRS.Catalog.API.Models
         public int Id { get; set; }
         public string UnitShort { get; set; }
         public string UnitLong { get; set; }
-        public DateTime CreatedDate { get; set; }
+        public DateTime CreatedAt { get; set; } = DateTime.Now;
 
-        //[JsonIgnore]
-        //public virtual Ingredient Ingredient { get; internal set; }
+        [JsonIgnore]
+        public virtual List<IngredientMeasure> IngredientMeasure { get; internal set; }
 
-        //[ForeignKey("Ingredient")]
-        //public int Id { get; set; }
     }
 }

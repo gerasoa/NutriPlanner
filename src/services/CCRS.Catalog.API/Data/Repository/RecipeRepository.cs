@@ -18,33 +18,38 @@ namespace CCRS.Catalog.API.Data.Repository
 
         public async Task<IEnumerable<Recipe>> GetAllRecipesAsync()
         {
-            return await _context.Recipe.AsNoTracking().ToListAsync();
+            return await _context.Recipes.AsNoTracking().ToListAsync();
         }
 
-        public async Task<Recipe> GetRecipeByIdAsync(Guid id)
+        public async Task<Recipe> GetRecipeByIdAsync(int id)
         {
-            var recipe = await _context.Recipe
+            var recipe = await _context.Recipes
                          .Include(v => v.Feedbacks)
-                         .Include(r => r.DirectionsGroup)
-                         .ThenInclude(ig => ig.Ingredients)
-                         .ThenInclude(m => m.Measure)
-                         .Include(r => r.DirectionsGroup)
-                         .ThenInclude(pg => pg.Directions)
                          .Include(c => c.Category)
                          .Include(c => c.Difficulty)
+                         .Include(r => r.RecipeDirections)
+                            .ThenInclude(ig => ig.IngredientDirections)
+                            .ThenInclude(m => m.IngredientMeasure)
+                            .ThenInclude(pg => pg.Ingredient)
+                        .Include(r => r.RecipeDirections)
+                            .ThenInclude(ig => ig.IngredientDirections)
+                            .ThenInclude(m => m.IngredientMeasure)
+                            .ThenInclude(pg => pg.Measure)
+                        .Include(r => r.RecipeDirections)
+                            .ThenInclude(d => d.Directions)
                          .FirstOrDefaultAsync(r => r.Id == id);
 
-            if(recipe == null)
-            {
-                return null;    
-            }
+            //if(recipe == null)
+            //{
+            //    return null;    
+            //}
 
-            recipe.DirectionsGroup = recipe.DirectionsGroup.OrderBy(dg => dg.OrderNumber).ToList();
+            //recipe.DirectionsGroup = recipe.DirectionsGroup.OrderBy(dg => dg.OrderNumber).ToList();
 
-            foreach(var directionsGroup in recipe.DirectionsGroup)
-            {
-                directionsGroup.Directions = directionsGroup.Directions.OrderBy(d => d.OrderNumber).ToList();
-            }
+            //foreach(var directionsGroup in recipe.DirectionsGroup)
+            //{
+            //    directionsGroup.Directions = directionsGroup.Directions.OrderBy(d => d.OrderNumber).ToList();
+            //}
 
             return recipe;
 
@@ -52,12 +57,12 @@ namespace CCRS.Catalog.API.Data.Repository
 
         public void Update(Recipe recipe)
         {
-            _context.Recipe.Update(recipe);
+            _context.Recipes.Update(recipe);
         }
 
         public void Add(Recipe recipe)
         {
-            _context.Recipe.Add(recipe);
+            _context.Recipes.Add(recipe);
         }
 
         public void Dispose()
