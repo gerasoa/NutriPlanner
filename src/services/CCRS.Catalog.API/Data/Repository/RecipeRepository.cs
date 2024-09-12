@@ -37,19 +37,19 @@ namespace CCRS.Catalog.API.Data.Repository
                             .ThenInclude(pg => pg.Measure)
                         .Include(r => r.RecipeDirections)
                             .ThenInclude(d => d.Directions)
-                         .FirstOrDefaultAsync(r => r.Id == id);
+                        .FirstOrDefaultAsync(r => r.Id == id);
 
-            //if(recipe == null)
-            //{
-            //    return null;    
-            //}
+            if (recipe == null)
+            {
+                return null;
+            }
 
-            //recipe.DirectionsGroup = recipe.DirectionsGroup.OrderBy(dg => dg.OrderNumber).ToList();
+            recipe.RecipeDirections = recipe.RecipeDirections.OrderBy(dg => dg.OrderNumber).ToList();
 
-            //foreach(var directionsGroup in recipe.DirectionsGroup)
-            //{
-            //    directionsGroup.Directions = directionsGroup.Directions.OrderBy(d => d.OrderNumber).ToList();
-            //}
+            foreach (var directionsGroup in recipe.RecipeDirections)
+            {
+                directionsGroup.Directions = directionsGroup.Directions.OrderBy(d => d.OrderNumber).ToList();
+            }
 
             return recipe;
 

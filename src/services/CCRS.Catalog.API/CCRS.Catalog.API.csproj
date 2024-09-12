@@ -5,6 +5,7 @@
     <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <ActiveDebugProfile>Selfhosting - Development</ActiveDebugProfile>
+    <UserSecretsId>c2e7130f-9102-47f3-b788-83613f11a6aa</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>

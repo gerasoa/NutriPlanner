@@ -3,11 +3,8 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+
 
 namespace CCRS.WebAPI.Core.Identity
 {
@@ -20,6 +17,7 @@ namespace CCRS.WebAPI.Core.Identity
 
             var appSettings = appSettingsSection.Get<AppSettings>();
             var key = Encoding.ASCII.GetBytes(appSettings.Secret);
+            
 
             services.AddAuthentication(options =>
             {
@@ -36,7 +34,9 @@ namespace CCRS.WebAPI.Core.Identity
                     ValidateIssuer = true,
                     ValidateAudience = true,
                     ValidAudience = appSettings.ValidIn,
-                    ValidIssuer = appSettings.Issuer
+                    ValidIssuer = appSettings.Issuer,
+                    ValidateLifetime = true
+
                 };
             });
         }
