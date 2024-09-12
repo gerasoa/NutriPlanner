@@ -1,0 +1,22 @@
+﻿@model IEnumerable<CCRS.WebApp.MVC.Models.RecipeViewModel>
+
+@{
+    ViewData["Title"] = "All Recipes";
+}
+
+<section>
+    <div class="container" style="padding-top:20px">
+        <div class="row">
+            @{
+                foreach (var recipe in Model.OrderBy(o => o.Name))
+                {
+                    <div class="row">
+                        <a asp-controller="Catalog" asp-action="RecipeDetail" asp-route-id="@recipe.Id">
+                            @recipe.Name
+                        </a>
+                    </div>                    
+                }
+            }
+        </div>
+    </div>
+</section>

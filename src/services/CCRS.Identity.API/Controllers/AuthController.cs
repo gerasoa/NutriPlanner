@@ -85,7 +85,7 @@ namespace CCRS.Identity.API.Controllers
 
             var identityClaims = await GetUserClaims(user, claims);
             var encodedToken = EncodeToken(identityClaims);
-            //var userRoles = await _userManager.GetRolesAsync(user);
+            var userRoles = await _userManager.GetRolesAsync(user);
 
             return GetResponseToken(user, claims, encodedToken);
         }
