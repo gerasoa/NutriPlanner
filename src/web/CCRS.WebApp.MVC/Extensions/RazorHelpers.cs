@@ -1,9 +1,10 @@
 ﻿using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
+using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Razor;
 
-namespace NSE.WebApp.MVC.Extensions
+namespace CCRS.WebApp.MVC.Extensions
 {
     public static class RazorHelpers
     {
@@ -27,6 +28,33 @@ namespace NSE.WebApp.MVC.Extensions
         public static string StockMessage(this RazorPage page, int quantity)
         {
             return quantity > 0 ? $"Only {quantity} in stock!" : "Product sold out!";
+        }
+
+
+        public static IHtmlContent RenderStars(this RazorPage page, double stars)
+        {
+            var builder = new StringBuilder();
+
+            int fullStars = (int)stars;
+            bool hasHalfStar = (stars - fullStars) >= 0.5;
+
+            for (int i = 1; i <= 5; i++)
+            {
+                if (i <= fullStars)
+                {
+                    builder.Append("<i class='fas fa-star' style='color: gold;'></i>");
+                }
+                else if (i == fullStars + 1 && hasHalfStar)
+                {
+                    builder.Append("<i class='fas fa-star-half-alt' style='color: gold;'></i>");
+                }
+                else
+                {
+                    builder.Append("<i class='fas fa-star' style='color: grey;'></i>");
+                }
+            }
+
+            return new HtmlString(builder.ToString());
         }
     }
 }

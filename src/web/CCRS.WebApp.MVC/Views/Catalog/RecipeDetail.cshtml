@@ -1,4 +1,5 @@
-﻿@model CCRS.WebApp.MVC.Models.RecipeViewModel
+﻿@using CCRS.WebApp.MVC.Extensions
+@model CCRS.WebApp.MVC.Models.RecipeViewModel
 @{
     ViewData["Title"] = "One Recipe";
 }
@@ -34,8 +35,9 @@
         <br />
     }
     @foreach (var feedbak in Model.Feedbacks)
-    {
+    {        
         <blockquote>
+            @this.RenderStars(@feedbak.Stars)
             @feedbak.Stars - stars <br />
             @feedbak.Comment
         </blockquote>
