@@ -12,7 +12,9 @@
         public DateTime CreatedAt { get; set; } = DateTime.Now;
         public bool Active { get; set; }
         public bool Verified { get; set; }
-        public virtual Category Category { get; set; }
-        //public virtual Difficulty Difficulty { get; set; }
+        public CategoryViewModel Category { get; set; }
+        public DifficultyViewModel Difficulty { get; set; }
+        public List<FeedbackViewModel> Feedbacks { get; set; }
+        public List<RecipeDirectionsViewModel> RecipeDirections { get; set; }
     }
 }

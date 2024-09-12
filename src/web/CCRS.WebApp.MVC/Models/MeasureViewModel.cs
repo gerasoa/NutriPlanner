@@ -1,10 +1,10 @@
 ﻿namespace CCRS.WebApp.MVC.Models
 {
-    public class Category
+    public class MeasureViewModel
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        public string Image { get; set; }
+        public string UnitShort { get; set; }
+        public string UnitLong { get; set; }
         public DateTime CreatedAt { get; set; }
     }
 }
