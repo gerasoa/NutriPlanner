@@ -20,6 +20,7 @@ namespace CCRS.WebAPI.Core.Identity
 
             var appSettings = appSettingsSection.Get<AppSettings>();
             var key = Encoding.ASCII.GetBytes(appSettings.Secret);
+            //var key = Encoding.ASCII.GetBytes("MYSUPERSECRETKEYSUPERSECRET123456789");
 
             services.AddAuthentication(options =>
             {
