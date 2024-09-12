@@ -1,4 +1,5 @@
-﻿using CCRS.WebApp.MVC.Services;
+﻿using CCRS.WebApp.MVC.Models;
+using CCRS.WebApp.MVC.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CCRS.WebApp.MVC.Controllers

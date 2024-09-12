@@ -1,10 +1,43 @@
 ﻿@model CCRS.WebApp.MVC.Models.RecipeViewModel
-
 @{
     ViewData["Title"] = "One Recipe";
 }
 <section>
-    <p>@Model.Name</p>
-    <p> @Model.Category.Name</p>
-    <p>@Model.Summary</p>
+    @Model.Image<br />
+    <blockquote>
+        @Model.Name<br />
+        Category: @Model.Category.Name<br />
+        Ready in: @Model.ReadyInMinutes minutes<br />
+        Serving: @Model.Servings portions <br />
+        <br />
+        @Model.Summary<br />
+    </blockquote>
+    @foreach (var recipeDirection in @Model.RecipeDirections)
+    {
+        <b>@recipeDirection.Name</b>
+        <p>Ingredientes:</p>
+        @foreach (var ingredientDirection in recipeDirection.ingredientDirections)
+        {
+            <div>
+                @ingredientDirection.Quantity
+                @ingredientDirection.IngredientMeasure.Measure.UnitShort -
+                @ingredientDirection.IngredientMeasure.Ingredient.Name
+            </div>
+        }
+
+        <p>Modo de preparo:</p>
+        @foreach (var directions in recipeDirection.Directions)
+        {
+            <div>@directions.OrderNumber - @directions.Step</div>
+        }
+        <br />
+        <br />
+    }
+    @foreach (var feedbak in Model.Feedbacks)
+    {
+        <blockquote>
+            @feedbak.Stars - stars <br />
+            @feedbak.Comment
+        </blockquote>
+    }
 </section>
