@@ -1,16 +1,16 @@
 ﻿@using CCRS.WebApp.MVC.Extensions;
-@using Microsoft.AspNetCore.Identity
-@using CCRS.WebApp.MVC.Extensions
-@inject IUser AppUser
+@using Microsoft.AspNetCore.Identity;
+@inject IUser AppUser;
 
 @if (AppUser.IsAuthenticated())
 {
     <div class="dropdown d-inline-block">
         <a href="#" class="icontext dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <img class="icon icon-sm rounded-circle" src="https://s.gravatar.com/avatar/@this.HashEmailForGravatar(AppUser.GetUserEmail())?d=mm&s=45" alt="User Avatar">
-        </a>
+        </a>@AppUser.Name
         <!-- iconbox // -->
         <div class="dropdown-menu dropdown-menu-end" style="position: absolute; will-change: transform; top: 12px; left: 91px; transform: translate3d(150px, 32px, 0px);">
+            <a class="dropdown-item">- @AppUser.Name - </a>
             <a class="dropdown-item" href="#">My Profile</a>
             <a class="dropdown-item" href="#">My Orders</a>
             <div class="dropdown-divider"></div>

@@ -1,10 +1,5 @@
 using CCRS.Catalog.API.Configuration;
-using CCRS.Catalog.API.Data;
-using CCRS.Catalog.API.Data.Repository;
-using CCRS.Catalog.API.Models;
 using CCRS.WebAPI.Core.Identity;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Internal;
 
 var builder = WebApplication.CreateBuilder(args);
 

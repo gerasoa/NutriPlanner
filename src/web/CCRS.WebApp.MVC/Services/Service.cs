@@ -1,8 +1,6 @@
 ﻿using CCRS.WebApp.MVC.Extensions;
-using Microsoft.AspNetCore.Components.Web;
-using System.Text.Json;
 using System.Text;
-using CCRS.WebApp.MVC.Models;
+using System.Text.Json;
 
 namespace CCRS.WebApp.MVC.Services
 {

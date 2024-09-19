@@ -1,9 +1,20 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using CCRS.WebApp.MVC.Extensions;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace CCRS.WebApp.MVC.Models
 {
     public class UserRegister
     {
+        [Required(ErrorMessage ="The field {0} is required.")]
+        [DisplayName("Name")]
+        public string Name { get; set; }
+
+        [Required(ErrorMessage = "The field {0} is required.")]
+        [DisplayName("CPF")]
+        [Cpf]
+        public string Cpf { get; set; }
+
         [Required(ErrorMessage = "The field {0} is required.")]
         [EmailAddress(ErrorMessage = "The field {0} is in an invalid format.")]
         public string Email { get; set; }

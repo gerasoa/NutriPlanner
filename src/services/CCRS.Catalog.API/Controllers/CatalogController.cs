@@ -1,17 +1,14 @@
 ﻿using CCRS.Catalog.API.Models;
+using CCRS.WebAPI.Core.Controllers;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Identity.Client;
-using System.Runtime.InteropServices;
-using CCRS.WebAPI.Core.Identity;
 using static CCRS.WebAPI.Core.Identity.CustomAuthorize;
-//using CCRS.Identity.API.Models;
 
 namespace CCRS.Catalog.API.Controllers
 {
     [ApiController]
     [Authorize]
-    public class CatalogController : Controller
+    public class CatalogController : MainController
     {
         private readonly IRecipeRepository _recipeRepository;
 

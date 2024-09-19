@@ -1,6 +1,5 @@
 ﻿using CCRS.Catalog.API.Data;
 using CCRS.WebAPI.Core.Identity;
-using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 
 namespace CCRS.Catalog.API.Configuration
