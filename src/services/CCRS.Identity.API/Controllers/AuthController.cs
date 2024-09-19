@@ -1,4 +1,5 @@
-﻿using CCRS.WebAPI.Core.Identity;
+﻿using CCRS.WebAPI.Core.Controllers;
+using CCRS.WebAPI.Core.Identity;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;

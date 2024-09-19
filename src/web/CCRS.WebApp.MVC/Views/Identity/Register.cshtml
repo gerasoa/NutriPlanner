@@ -12,8 +12,25 @@
 
         <div class="card-body">
             <h4 class="card-title mb-4">Welcome!</h4>
-
             <form asp-route-returnurl="@ViewData["ReturnUrl"]" method="post">
+                <div class="row mb-3">
+                    <div class="col">
+                        <div class="form-group">
+                            <label asp-for="Name"></label>
+                            <input asp-for="Name" class="form-control" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col">
+                        <div class="form-group">
+                            <label asp-for="Cpf"></label>
+                            <input asp-for="Cpf" class="form-control" />
+                            <span asp-validation-for="Cpf" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
                 <div class="row mb-3">
                     <div class="col">
                         <div class="form-group">

@@ -41,7 +41,7 @@ namespace CCRS.WebApp.MVC.Configuration
                 DefaultRequestCulture = new RequestCulture("pt-BR"),
                 SupportedCultures = supportedCultures,
                 SupportedUICultures = supportedCultures
-            })
+            });
 
             app.UseMiddleware<ExceptionMiddleware>();
 

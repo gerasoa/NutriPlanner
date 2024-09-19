@@ -1,14 +1,14 @@
-﻿using CCRS.Catalog.API.Data;
+﻿using CCRS.User.API.Models.Data;
 using CCRS.WebAPI.Core.Identity;
 using Microsoft.EntityFrameworkCore;
 
-namespace CCRS.Catalog.API.Configuration
+namespace CCRS.User.API.Models.Configuration
 {
     public static class ApiConfig
     {
         public static void AddApiConfiguration(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddDbContext<CatalogContext>(option =>
+            services.AddDbContext<UserProfileContext>(option =>
                 option.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 
             services.AddControllers();

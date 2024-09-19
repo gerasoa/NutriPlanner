@@ -1,8 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using FluentValidation.Results;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
-using System.Runtime.CompilerServices;
 
-namespace CCRS.Identity.API.Controllers
+
+namespace CCRS.WebAPI.Core.Controllers
 {
     [ApiController]
     public abstract class MainController : Controller
@@ -30,6 +31,15 @@ namespace CCRS.Identity.API.Controllers
                 AddProcessingError(error.ErrorMessage);
             }
             return CustomResponse(errors);
+        }
+
+        protected ActionResult CustomResponse(ValidationResult validationResult)
+        {            
+            foreach (var error in validationResult.Errors)
+            {
+                AddProcessingError(error.ErrorMessage);
+            }
+            return CustomResponse();
         }
 
         protected bool ValidOperation()

@@ -1,6 +1,7 @@
 ﻿using CCRS.WebApp.MVC.Services;
 using CCRS.WebApp.MVC.Extensions;
 using CCRS.WebApp.MVC.Services.Handlers;
+using Microsoft.AspNetCore.Mvc.DataAnnotations;
 
 namespace CCRS.WebApp.MVC.Configuration
 {
@@ -8,6 +9,8 @@ namespace CCRS.WebApp.MVC.Configuration
     {
         public static void RegisterServices(this IServiceCollection services)
         {
+            services.AddSingleton<IValidationAttributeAdapterProvider, CpfValidationAttributeAdapterProvider>();
+
             //todo: entender melhor como funciona 
             services.AddTransient<HttpClientAuthorizationDelegatingHandler>();
 

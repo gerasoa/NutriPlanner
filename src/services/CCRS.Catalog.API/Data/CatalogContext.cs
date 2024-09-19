@@ -1,10 +1,10 @@
 ﻿//using CCRS.Catalog.API.Migrations;
 using CCRS.Catalog.API.Models;
 using CCRS.Core.Data;
-using Microsoft.Data.SqlClient;
+using CCRS.Core.Messages;
+using FluentValidation.Results;
 using Microsoft.EntityFrameworkCore;
 using System.Data;
-using System.Numerics;
 
 namespace CCRS.Catalog.API.Data
 {
@@ -26,6 +26,9 @@ namespace CCRS.Catalog.API.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Ignore<ValidationResult>();
+            modelBuilder.Ignore<Event>();
+
             foreach (var property in modelBuilder.Model.GetEntityTypes().SelectMany(
                 e => e.GetProperties().Where(p => p.ClrType == typeof(string)))) 
                 property.SetColumnType("varchar(200)");
