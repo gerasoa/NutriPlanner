@@ -113,7 +113,7 @@ namespace CCRS.Catalog.API.Migrations
                     b.Property<int>("RecipeId")
                         .HasColumnType("int");
 
-                    b.Property<float>("Stars")
+                    b.Property<decimal>("Stars")
                         .HasColumnType("real");
 
                     b.Property<int>("UserId")

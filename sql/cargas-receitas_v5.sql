@@ -207,10 +207,27 @@ INSERT INTO [dbo].[IngredientDirections] (Quantity, RecipeDirectionId, Ingredien
 /**************************
 ***** Feedback
 **************************/
-INSERT INTO [dbo].[FeedbackS] (UserId, Stars, Comment, Image, CreatedAt, RecipeId)
+INSERT INTO [dbo].[Feedbacks] (UserId, Stars, Comment, Image, CreatedAt, RecipeId)
 	VALUES
-			(1, 4, 'Gostei muito, mas muito demorado', 'image-from-user-bolo.jpg', GETDATE(), 1),
+			(1, 4.5, 'Gostei muito, mas muito demorado', 'image-from-user-bolo.jpg', GETDATE(), 2),
 			(1, 5, 'Adorei, a familia toda amou!', 'image-from-user-pao.jpg', GETDATE(), 2),
 			(1, 4, 'Poderia ser melhor', 'image-from-user-pudim.jpg', GETDATE(), 2),
-			(1, 5, 'Maravilhoso, farei outras vezes', 'image-from-user-pudim.jpg', GETDATE(), 3),
-			(1, 5, 'A familia amou!', 'image-from-user-pudim.jpg', GETDATE(), 3);
+			(1, 2.5, 'Maravilhoso, farei outras vezes', 'image-from-user-pudim.jpg', GETDATE(), 3),
+			(1, 1.5, 'A familia amou!', 'image-from-user-pudim.jpg', GETDATE(), 3);
+
+
+
+
+INSERT INTO [dbo].[Feedbacks] (UserId, Stars, Comment, Image, CreatedAt, RecipeId)
+	VALUES
+			(1, 0, '0 star feedback', '', GETDATE(), 1),
+			(1, 0.5, '0.5 star feedback', '', GETDATE(), 1),
+			(1, 1, '1 star feedback', '', GETDATE(), 1),
+			(1, 1.5, '1.5 star feedback', '', GETDATE(), 1),
+			(1, 2, '2 star feedback', '', GETDATE(), 1),
+			(1, 2.5, '2.5 star feedback', '', GETDATE(), 1),
+			(1, 3, '3 star feedback', '', GETDATE(), 1),
+			(1, 3.5, '3.5 star feedback', '', GETDATE(), 1),
+			(1, 4, '4 star feedback', '', GETDATE(), 1),
+			(1, 4.5, '4.5 star feedback', '', GETDATE(), 1),
+			(1, 5, '5 star feedback', '', GETDATE(), 1);

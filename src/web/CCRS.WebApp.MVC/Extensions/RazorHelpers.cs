@@ -1,8 +1,11 @@
 ﻿using System.Security.Cryptography;
 using System.Text;
+using System.Text.Encodings.Web;
 using System.Threading;
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Razor;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.Extensions.Primitives;
 
 namespace CCRS.WebApp.MVC.Extensions
 {
@@ -31,30 +34,46 @@ namespace CCRS.WebApp.MVC.Extensions
         }
 
 
-        public static IHtmlContent RenderStars(this RazorPage page, double stars)
+        public static IHtmlContent RenderStars(this RazorPage page, decimal stars)
         {
             var builder = new StringBuilder();
 
             int fullStars = (int)stars;
-            bool hasHalfStar = (stars - fullStars) >= 0.5;
+            bool hasHalfStar = (stars - fullStars) >= 0.5m; //0.5m por ser decimnal
 
-            for (int i = 1; i <= 5; i++)
+            //add fulll stars
+            for (int i = 1; i <= fullStars; i++)
             {
-                if (i <= fullStars)
-                {
-                    builder.Append("<i class='fas fa-star' style='color: gold;'></i>");
-                }
-                else if (i == fullStars + 1 && hasHalfStar)
-                {
-                    builder.Append("<i class='fas fa-star-half-alt' style='color: gold;'></i>");
-                }
-                else
-                {
-                    builder.Append("<i class='fas fa-star' style='color: grey;'></i>");
-                }
+                builder.Append(CreateStarTag("fas fa-star", "gold"));
+            }
+
+            // add halp star
+            if (hasHalfStar)
+            {
+                builder.Append(CreateStarTag("fas fa-star-half-alt", "gold"));
+            }
+
+            //add empty stars
+            int emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
+            for (int i = 1; i <= emptyStars; i++)
+            {
+                builder.Append(CreateStarTag("fas fa-star", "grey"));
             }
 
             return new HtmlString(builder.ToString());
+        }
+
+        private static string CreateStarTag(string iconClass, string color)
+        {
+            var tagBuilder = new TagBuilder("i");
+            tagBuilder.AddCssClass(iconClass);
+            tagBuilder.Attributes.Add("style", $"color: {color};");
+
+            using(var writer = new StringWriter())
+            {
+                tagBuilder.WriteTo(writer, HtmlEncoder.Default);
+                return writer.ToString();
+            }
         }
     }
 }
