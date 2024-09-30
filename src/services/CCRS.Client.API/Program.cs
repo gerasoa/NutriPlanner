@@ -1,3 +1,5 @@
+using CCRS.MessageBus;
+using CCRS.User.API.Configuration;
 using CCRS.User.API.Models.Configuration;
 using CCRS.WebAPI.Core.Identity;
 using MediatR;
@@ -20,6 +22,8 @@ builder.Services.RegisterServices();
 builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddMediatR(AppDomain.CurrentDomain.GetAssemblies());
+
+builder.Services.AddMessageBusConfiguration(builder.Configuration);
 
 
 builder.Services.AddSwaggerGen();

@@ -1,7 +1,9 @@
 ﻿using CCRS.Core.Mediator;
 using CCRS.User.API.Models.Application.Commands;
+using CCRS.User.API.Models.Models;
 using CCRS.WebAPI.Core.Controllers;
 using Microsoft.AspNetCore.Mvc;
+using Polly.Bulkhead;
 
 namespace CCRS.User.API.Models.Controllers
 {

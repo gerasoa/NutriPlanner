@@ -12,6 +12,7 @@ namespace CCRS.User.API.Models.Models
             Email = new Email(email);
             Cpf = new Cpf(cpf);
             IsActive = true;
+            
         }
 
         //EF Relation
@@ -23,8 +24,11 @@ namespace CCRS.User.API.Models.Models
         public string Name { get; private set; }
         public Email Email { get; private set; }
         public Cpf Cpf { get; private set; }
+        public string NumCertifiction {  get; private set; }
+        public string CountryCertification { get; private set; }
         public bool IsActive { get; private set; } // 0 = False - 1 = True
         public Address Address { get; private set; }
+
 
         public void ChangeEmail(string email) 
         {

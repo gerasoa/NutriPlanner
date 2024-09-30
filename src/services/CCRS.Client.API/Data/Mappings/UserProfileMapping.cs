@@ -15,6 +15,12 @@ namespace CCRS.User.API.Models.Data.Mappings
                 .IsRequired()
                 .HasColumnType("varchar(200)");
 
+            builder.Property(c => c.NumCertifiction)                
+                .HasColumnType("varchar(50)");
+
+            builder.Property(c => c.CountryCertification)
+                .HasColumnType("varchar(150)");
+
             //The UserProfile has one Cpf
             builder.OwnsOne(c => c.Cpf, tf =>
             {

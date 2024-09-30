@@ -21,7 +21,16 @@ namespace CCRS.Core.Messages
         
         protected async Task<ValidationResult> SaveData(IUnifOfWork uow)
         {
-            if (!await uow.Commit()) AdddError("An error occurred during data persistence."); 
+            //todo try-catch do commit
+            try
+            {
+                if (!await uow.Commit()) AdddError("An error occurred during data persistence.");
+            }
+            catch (Exception  ex)
+            {
+                throw;
+            }
+            
             return ValidationResult;
         }
     }
