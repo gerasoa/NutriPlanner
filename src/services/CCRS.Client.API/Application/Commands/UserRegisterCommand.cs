@@ -12,6 +12,8 @@ namespace CCRS.User.API.Models.Application.Commands
         public string Name { get; private set; }
         public string Email { get; private set; }
         public string Cpf { get; private set; }
+        public string NumCertifiction { get; private set; }
+        public string CountryCertification { get; private set; }
 
         public UserRegisterCommand(Guid id, string name, string email, string cpf)
         {

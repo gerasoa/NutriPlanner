@@ -1,5 +1,8 @@
-﻿using CCRS.WebAPI.Core.Controllers;
+﻿using CCRS.Core.Messages.Integration;
+using CCRS.MessageBus;
+using CCRS.WebAPI.Core.Controllers;
 using CCRS.WebAPI.Core.Identity;
+using EasyNetQ;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
@@ -18,14 +21,18 @@ namespace CCRS.Identity.API.Controllers
         private readonly UserManager<IdentityUser> _userManager;
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly AppSettings _appSettings;
+        //private IBus _bus;
+        private readonly IMessageBus _bus;
 
-        public AuthController(SignInManager<IdentityUser> signInManager, 
-                                            UserManager<IdentityUser> userManager, 
-                                            IOptions<AppSettings> appSettings)
+        public AuthController(SignInManager<IdentityUser> signInManager,
+                                            UserManager<IdentityUser> userManager,
+                                            IOptions<AppSettings> appSettings,
+                                            IMessageBus bus)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _appSettings = appSettings.Value;
+            _bus = bus;
         }
 
         [HttpPost("new-user")]
@@ -46,10 +53,19 @@ namespace CCRS.Identity.API.Controllers
 
             if (result.Succeeded)
             {
+                //Build the integration event
+                var userResult = await ClientRegister(userRegister);
+
+                if(!userResult.ValidationResult.IsValid)
+                {
+                    await _userManager.DeleteAsync(user);
+                    return CustomResponse(userResult.ValidationResult);
+                }
+
                 return Ok(await GenerateJwt(userRegister.Email));
             }
 
-            foreach(var error in result.Errors)
+            foreach (var error in result.Errors)
             {
                 AddProcessingError(error.Description);
             }
@@ -142,7 +158,28 @@ namespace CCRS.Identity.API.Controllers
             return identityClaims;
         }
 
-        private static long ToUnixExpochDate(DateTime date) 
+        private static long ToUnixExpochDate(DateTime date)
             => (long)Math.Round((date.ToUniversalTime() - new DateTimeOffset(1970, 1, 1, 0, 0, 0, TimeSpan.Zero)).TotalSeconds);
+
+        //recebe o request e ja devolve o response
+        private async Task<ResponseMessage> ClientRegister(UserRegister userRegister)
+        {
+            var user = await _userManager.FindByEmailAsync(userRegister.Email);
+
+            var userRegistered = new UserRegisteredIntegrationEvent(
+                Guid.Parse(user.Id), userRegister.Name, userRegister.Email, userRegister.Cpf);
+                        
+            try
+            {
+                // Default port RabbitMQ
+                // _bus = RabbitHutch.CreateBus("host=localhost:5672");
+                return await _bus.RequestAsync<UserRegisteredIntegrationEvent, ResponseMessage>(userRegistered);
+            }
+            catch 
+            {
+                await _bus.RequestAsync<UserRegisteredIntegrationEvent, ResponseMessage>(userRegistered);
+                throw;
+            }                        
+        }
     }
 }

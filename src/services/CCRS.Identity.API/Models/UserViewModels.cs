@@ -7,6 +7,12 @@ namespace CCRS.Identity.API.Models
     {
         public class UserRegister
         {
+            [Required(ErrorMessage ="the field {0} is required.")]
+            public string Name { get; set; }
+
+            [Required(ErrorMessage = "the field {0} is required.")]
+            public string Cpf { get; set; }
+
             [Required(ErrorMessage = "The field {0} is required.")]
             [EmailAddress(ErrorMessage = "The field {0} is in an invalid format.")]
             public string Email { get; set; }

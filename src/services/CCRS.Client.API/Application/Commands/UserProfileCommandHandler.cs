@@ -7,11 +7,11 @@ using System.Globalization;
 
 namespace CCRS.User.API.Models.Application.Commands
 {
-    public class UserCommandHandler : CommandHandler, IRequestHandler<UserRegisterCommand, ValidationResult>
+    public class UserProfileCommandHandler : CommandHandler, IRequestHandler<UserRegisterCommand, ValidationResult>
     {
         private readonly IUserProfileRepository _userProfileRepository;
 
-        public UserCommandHandler(IUserProfileRepository userProfileRepository)
+        public UserProfileCommandHandler(IUserProfileRepository userProfileRepository)
         {
             _userProfileRepository = userProfileRepository;
         }

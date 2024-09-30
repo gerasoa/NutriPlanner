@@ -19,7 +19,7 @@ namespace CCRS.Core.DomainObjects
             //cpf = new string(cpf.Where(char.IsDigit).ToArray());
             cpf = cpf.NumbersOnly(cpf);
 
-            // CPF must have 11 digits
+            // CPF must have 15 digits
             if (cpf.Length != 11)
                 return false;
 

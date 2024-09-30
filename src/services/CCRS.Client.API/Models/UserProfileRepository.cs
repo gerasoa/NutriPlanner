@@ -30,7 +30,7 @@ namespace CCRS.User.API.Models.Models
          _context.UserProfile.Add(userProfile);
         }
 
-        public async void Dispose()
+        public void Dispose()
         {
             _context?.Dispose();
         }
