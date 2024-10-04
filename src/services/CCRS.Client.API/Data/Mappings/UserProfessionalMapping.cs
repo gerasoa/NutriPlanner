@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace CCRS.User.API.Models.Data.Mappings
 {
-    public class UserProfileMapping : IEntityTypeConfiguration<UserProfile>
+    public class UserProfessionalMapping : IEntityTypeConfiguration<UserProfessional>
     {
-        public void Configure(EntityTypeBuilder<UserProfile> builder)
+        public void Configure(EntityTypeBuilder<UserProfessional> builder)
         {
             builder.HasKey(c => c.Id);
 
@@ -35,7 +35,7 @@ namespace CCRS.User.API.Models.Data.Mappings
 
 
 
-        //The UserProfile has one Cpf
+        //The UserProfessional has one Cpf
         builder.OwnsOne(c => c.Cpf, tf =>
             {
                 tf.Property(c => c.Number)
@@ -54,9 +54,9 @@ namespace CCRS.User.API.Models.Data.Mappings
             });
 
             builder.HasOne(c => c.Address)
-                .WithOne(c => c.UserProfile);
+                .WithOne(c => c.UserProfessional);
 
-            builder.ToTable("UserProfile");
+            builder.ToTable("UserProfessional");
         }
     }
 }

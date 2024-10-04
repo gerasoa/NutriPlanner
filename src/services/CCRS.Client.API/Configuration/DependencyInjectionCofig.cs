@@ -14,12 +14,12 @@ namespace CCRS.User.API.Models.Configuration
         public static void RegisterServices(this IServiceCollection services)
         {
             services.AddScoped<IMediatorHandler, MediatorHandler>();
-            services.AddScoped<IRequestHandler<UserRegisterCommand, ValidationResult>, UserProfileCommandHandler>();
+            services.AddScoped<IRequestHandler<UserRegisterCommand, ValidationResult>, UserProfessionalCommandHandler>();
 
-            services.AddScoped<INotificationHandler<UserProfileRegisteredEvent>, UserProfileEventHandler>(); 
+            services.AddScoped<INotificationHandler<UserProfessionalRegisteredEvent>, UserProfessionalEventHandler>(); 
 
-            services.AddScoped<IUserProfileRepository, UserProfileRepository>();
-            services.AddScoped<UserProfileContext>();
+            services.AddScoped<IUserProfessionalRepository, UserProfessionalRepository>();
+            services.AddScoped<UserProfessionalContext>();
 
             // nao sera mais utilizado, estara sob responsabilidade da abstracao MessageBus
             // CCRS.User.API.Configuration.MessageBusConfig.AddMessageBusConfiguration

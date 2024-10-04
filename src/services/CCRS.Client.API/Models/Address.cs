@@ -25,7 +25,7 @@ namespace CCRS.User.API.Models
 
 
         //EF Relation
-        public Guid UserProfileId { get; private set; }
-        public UserProfile UserProfile { get; protected set; }
+        public Guid UserProfessionalId { get; private set; }
+        public UserProfessional UserProfessional { get; protected set; }
     }
 }

@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CCRS.User.API.Migrations
 {
-    [DbContext(typeof(UserProfileContext))]
+    [DbContext(typeof(UserProfessionalContext))]
     [Migration("20241004174048_initial")]
     partial class initial
     {
@@ -59,18 +59,18 @@ namespace CCRS.User.API.Migrations
                         .IsRequired()
                         .HasColumnType("varchar(50)");
 
-                    b.Property<Guid>("UserProfileId")
+                    b.Property<Guid>("UserProfessionalId")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UserProfileId")
+                    b.HasIndex("UserProfessionalId")
                         .IsUnique();
 
                     b.ToTable("Enderecos", (string)null);
                 });
 
-            modelBuilder.Entity("CCRS.User.API.Models.UserProfile", b =>
+            modelBuilder.Entity("CCRS.User.API.Models.UserProfessional", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -106,24 +106,24 @@ namespace CCRS.User.API.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("UserProfile", (string)null);
+                    b.ToTable("UserProfessional", (string)null);
                 });
 
             modelBuilder.Entity("CCRS.User.API.Models.Address", b =>
                 {
-                    b.HasOne("CCRS.User.API.Models.UserProfile", "UserProfile")
+                    b.HasOne("CCRS.User.API.Models.UserProfessional", "UserProfessional")
                         .WithOne("Address")
-                        .HasForeignKey("CCRS.User.API.Models.Address", "UserProfileId")
+                        .HasForeignKey("CCRS.User.API.Models.Address", "UserProfessionalId")
                         .IsRequired();
 
-                    b.Navigation("UserProfile");
+                    b.Navigation("UserProfessional");
                 });
 
-            modelBuilder.Entity("CCRS.User.API.Models.UserProfile", b =>
+            modelBuilder.Entity("CCRS.User.API.Models.UserProfessional", b =>
                 {
                     b.OwnsOne("CCRS.Core.DomainObjects.Cpf", "Cpf", b1 =>
                         {
-                            b1.Property<Guid>("UserProfileId")
+                            b1.Property<Guid>("UserProfessionalId")
                                 .HasColumnType("uniqueidentifier");
 
                             b1.Property<string>("Number")
@@ -132,17 +132,17 @@ namespace CCRS.User.API.Migrations
                                 .HasColumnType("varchar(15)")
                                 .HasColumnName("Cpf");
 
-                            b1.HasKey("UserProfileId");
+                            b1.HasKey("UserProfessionalId");
 
-                            b1.ToTable("UserProfile");
+                            b1.ToTable("UserProfessional");
 
                             b1.WithOwner()
-                                .HasForeignKey("UserProfileId");
+                                .HasForeignKey("UserProfessionalId");
                         });
 
                     b.OwnsOne("CCRS.Core.DomainObjects.Email", "Email", b1 =>
                         {
-                            b1.Property<Guid>("UserProfileId")
+                            b1.Property<Guid>("UserProfessionalId")
                                 .HasColumnType("uniqueidentifier");
 
                             b1.Property<string>("Address")
@@ -150,12 +150,12 @@ namespace CCRS.User.API.Migrations
                                 .HasColumnType("varchar(254)")
                                 .HasColumnName("Email");
 
-                            b1.HasKey("UserProfileId");
+                            b1.HasKey("UserProfessionalId");
 
-                            b1.ToTable("UserProfile");
+                            b1.ToTable("UserProfessional");
 
                             b1.WithOwner()
-                                .HasForeignKey("UserProfileId");
+                                .HasForeignKey("UserProfessionalId");
                         });
 
                     b.Navigation("Cpf");
@@ -163,7 +163,7 @@ namespace CCRS.User.API.Migrations
                     b.Navigation("Email");
                 });
 
-            modelBuilder.Entity("CCRS.User.API.Models.UserProfile", b =>
+            modelBuilder.Entity("CCRS.User.API.Models.UserProfessional", b =>
                 {
                     b.Navigation("Address");
                 });
