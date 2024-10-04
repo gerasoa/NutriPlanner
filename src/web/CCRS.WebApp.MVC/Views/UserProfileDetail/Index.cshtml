@@ -1,0 +1,77 @@
+﻿@model CCRS.WebApp.MVC.Models.UserProfileDetailsViewModel
+@using Microsoft.AspNetCore.Identity;
+@using CCRS.WebApp.MVC.Extensions;
+@inject IUser AppUser;
+@{
+    ViewData["Title"] = "Home Page";
+}
+<section class="section-conten padding-y container" style="min-height:45vh">
+
+    <vc:Summary></vc:Summary>
+
+    <div class="card mx-auto" style="max-width: 380px; margin-top: 100px;">
+
+        <div class="card-body">
+            <h4 class="card-title mb-4">user Details @AppUser.GetUserEmail()</h4>
+
+            <!-- Success and Error messages -->
+            @if (TempData["SuccessMessage"] != null)
+            {
+                <div class="alert alert-success" role="alert">
+                    @TempData["SuccessMessage"]
+                </div>
+            }
+            @if (TempData["ErrorMessage"] != null)
+            {
+                <div class="alert alert-danger" role="alert">
+                    @TempData["ErrorMessage"]
+                </div>
+            }
+            <form asp-route-returnurl="@ViewData["ReturnUrl"]" method="post">
+                <div class="row mb-3">
+                    <div class="col">
+                        <div class="form-group">
+                             <label asp-for="NutritionistCouncilNumber"></label>
+                            <input asp-for="NutritionistCouncilNumber" class="form-control" />
+                            <span asp-validation-for="NutritionistCouncilNumber" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col">
+                        <div class="form-group">
+                            <label asp-for="CountryOfCertification"></label>
+                            <input asp-for="CountryOfCertification" class="form-control" />
+                            <span asp-validation-for="CountryOfCertification" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col">
+                        <div class="form-group">
+                            <label asp-for="Nacionality"></label>
+                            <input asp-for="Nacionality" class="form-control" />
+                            <span asp-validation-for="Nacionality" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary w-100">Enter</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+        </div>
+
+</section>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

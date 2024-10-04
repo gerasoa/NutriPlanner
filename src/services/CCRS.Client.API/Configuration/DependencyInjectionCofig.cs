@@ -2,7 +2,7 @@
 using CCRS.User.API.Models.Application.Commands;
 using CCRS.User.API.Models.Application.Events;
 using CCRS.User.API.Models.Data;
-using CCRS.User.API.Models.Models;
+//using CCRS.User.API.Models.Models;
 using CCRS.User.API.Services;
 using FluentValidation.Results;
 using MediatR;

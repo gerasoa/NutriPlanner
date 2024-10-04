@@ -17,9 +17,16 @@ namespace CCRS.User.API.Migrations
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Name = table.Column<string>(type: "varchar(200)", nullable: false),
-                    Email = table.Column<string>(type: "varchar(254)", nullable: false),
-                    Cpf = table.Column<string>(type: "varchar(11)", maxLength: 11, nullable: false),
-                    IsActive = table.Column<bool>(type: "bit", nullable: false)
+                    Email = table.Column<string>(type: "varchar(254)", nullable: true),
+                    Cpf = table.Column<string>(type: "varchar(15)", maxLength: 15, nullable: true),
+                    NutritionistCouncilNumber = table.Column<string>(type: "varchar(50)", nullable: true),
+                    CountryOfCertification = table.Column<string>(type: "varchar(150)", nullable: true),
+                    IsActive = table.Column<bool>(type: "bit", nullable: false),
+                    Profession = table.Column<string>(type: "varchar(150)", nullable: true),
+                    Nacionality = table.Column<string>(type: "varchar(150)", nullable: true),
+                    DoB = table.Column<DateOnly>(type: "date", nullable: false),
+                    Gender = table.Column<string>(type: "varchar(150)", nullable: true),
+                    Phone = table.Column<string>(type: "varchar(150)", nullable: true)
                 },
                 constraints: table =>
                 {

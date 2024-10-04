@@ -2,7 +2,7 @@
 using CCRS.Core.DomainObjects;
 using CCRS.Core.Mediator;
 using CCRS.Core.Messages;
-using CCRS.User.API.Models.Models;
+//using CCRS.User.API.Models.Models;
 using FluentValidation.Results;
 using Microsoft.EntityFrameworkCore;
 using System.Data;

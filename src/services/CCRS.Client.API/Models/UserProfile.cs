@@ -1,7 +1,7 @@
 ﻿using CCRS.Core.DomainObjects;
 using System.Diagnostics;
 
-namespace CCRS.User.API.Models.Models
+namespace CCRS.User.API.Models
 {
     public class UserProfile : Entity, IAggregateRoot
     {
@@ -12,11 +12,10 @@ namespace CCRS.User.API.Models.Models
             Email = new Email(email);
             Cpf = new Cpf(cpf);
             IsActive = true;
-            
         }
-
+           
         //EF Relation
-        protected UserProfile()
+        public UserProfile()
         {
 
         }
@@ -24,11 +23,15 @@ namespace CCRS.User.API.Models.Models
         public string Name { get; private set; }
         public Email Email { get; private set; }
         public Cpf Cpf { get; private set; }
-        public string NumCertifiction {  get; private set; }
-        public string CountryCertification { get; private set; }
+        public string NutritionistCouncilNumber { get; private set; }
+        public string CountryOfCertification { get; private set; }
         public bool IsActive { get; private set; } // 0 = False - 1 = True
         public Address Address { get; private set; }
-
+        public string Profession { get; private set; }
+        public string Nacionality { get; private set; }
+        public DateOnly DoB { get; private set; }
+        public string Gender { get; private set; }
+        public string Phone { get; private set; }
 
         public void ChangeEmail(string email) 
         {
@@ -37,6 +40,30 @@ namespace CCRS.User.API.Models.Models
         public void SetAddress(Address address)
         {
             Address = address;
+        }
+
+        public void SetNutritionistCouncilNumber(string nutritionistCouncilNumber)
+        {
+            if(!string.IsNullOrEmpty(nutritionistCouncilNumber))
+            {
+                NutritionistCouncilNumber = nutritionistCouncilNumber.Trim();
+            }
+        }
+
+        public void SetCountryOfCertification(string countryOfCertification)
+        {
+            if (!string.IsNullOrEmpty(countryOfCertification))
+            {
+                CountryOfCertification = countryOfCertification.Trim();
+            }
+        }
+
+        public void SetNacionality(string nacionality)
+        {
+            if (!string.IsNullOrEmpty(nacionality))
+            {
+                Nacionality = nacionality.Trim();
+            }
         }
     }
 }
