@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CCRS.User.API.Migrations
 {
     [DbContext(typeof(UserProfileContext))]
-    [Migration("20240918191032_initial")]
+    [Migration("20241004174048_initial")]
     partial class initial
     {
         /// <inheritdoc />
@@ -76,12 +76,33 @@ namespace CCRS.User.API.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<string>("CountryOfCertification")
+                        .HasColumnType("varchar(150)");
+
+                    b.Property<DateOnly>("DoB")
+                        .HasColumnType("date");
+
+                    b.Property<string>("Gender")
+                        .HasColumnType("varchar(150)");
+
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
+
+                    b.Property<string>("Nacionality")
+                        .HasColumnType("varchar(150)");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("varchar(200)");
+
+                    b.Property<string>("NutritionistCouncilNumber")
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<string>("Phone")
+                        .HasColumnType("varchar(150)");
+
+                    b.Property<string>("Profession")
+                        .HasColumnType("varchar(150)");
 
                     b.HasKey("Id");
 
@@ -107,8 +128,8 @@ namespace CCRS.User.API.Migrations
 
                             b1.Property<string>("Number")
                                 .IsRequired()
-                                .HasMaxLength(11)
-                                .HasColumnType("varchar(11)")
+                                .HasMaxLength(15)
+                                .HasColumnType("varchar(15)")
                                 .HasColumnName("Cpf");
 
                             b1.HasKey("UserProfileId");
@@ -137,17 +158,14 @@ namespace CCRS.User.API.Migrations
                                 .HasForeignKey("UserProfileId");
                         });
 
-                    b.Navigation("Cpf")
-                        .IsRequired();
+                    b.Navigation("Cpf");
 
-                    b.Navigation("Email")
-                        .IsRequired();
+                    b.Navigation("Email");
                 });
 
             modelBuilder.Entity("CCRS.User.API.Models.UserProfile", b =>
                 {
-                    b.Navigation("Address")
-                        .IsRequired();
+                    b.Navigation("Address");
                 });
 #pragma warning restore 612, 618
         }

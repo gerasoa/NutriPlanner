@@ -1,5 +1,5 @@
 ﻿using CCRS.Core.DomainObjects;
-using CCRS.User.API.Models.Models;
+//using CCRS.User.API.Models.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -15,14 +15,28 @@ namespace CCRS.User.API.Models.Data.Mappings
                 .IsRequired()
                 .HasColumnType("varchar(200)");
 
-            builder.Property(c => c.NumCertifiction)                
+            builder.Property(c => c.NutritionistCouncilNumber)                
                 .HasColumnType("varchar(50)");
 
-            builder.Property(c => c.CountryCertification)
+            builder.Property(c => c.CountryOfCertification)
                 .HasColumnType("varchar(150)");
 
-            //The UserProfile has one Cpf
-            builder.OwnsOne(c => c.Cpf, tf =>
+            builder.Property(c => c.Profession)
+                .HasColumnType("varchar(150)");
+
+            builder.Property(c => c.Nacionality)
+               .HasColumnType("varchar(150)");
+
+            builder.Property(c => c.Gender)
+               .HasColumnType("varchar(150)");
+
+            builder.Property(c => c.Phone)
+              .HasColumnType("varchar(150)");
+
+
+
+        //The UserProfile has one Cpf
+        builder.OwnsOne(c => c.Cpf, tf =>
             {
                 tf.Property(c => c.Number)
                 .IsRequired()

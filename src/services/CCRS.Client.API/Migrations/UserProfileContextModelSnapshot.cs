@@ -22,7 +22,7 @@ namespace CCRS.User.API.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("CCRS.User.API.Models.Models.Address", b =>
+            modelBuilder.Entity("CCRS.User.API.Models.Address", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -67,41 +67,56 @@ namespace CCRS.User.API.Migrations
                     b.ToTable("Enderecos", (string)null);
                 });
 
-            modelBuilder.Entity("CCRS.User.API.Models.Models.UserProfile", b =>
+            modelBuilder.Entity("CCRS.User.API.Models.UserProfile", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("CountryCertification")
-                        .HasColumnType("varchar(200)");
+                    b.Property<string>("CountryOfCertification")
+                        .HasColumnType("varchar(150)");
+
+                    b.Property<DateOnly>("DoB")
+                        .HasColumnType("date");
+
+                    b.Property<string>("Gender")
+                        .HasColumnType("varchar(150)");
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
+
+                    b.Property<string>("Nacionality")
+                        .HasColumnType("varchar(150)");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("varchar(200)");
 
-                    b.Property<string>("NumCertifiction")
-                        .HasColumnType("varchar(200)");
+                    b.Property<string>("NutritionistCouncilNumber")
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<string>("Phone")
+                        .HasColumnType("varchar(150)");
+
+                    b.Property<string>("Profession")
+                        .HasColumnType("varchar(150)");
 
                     b.HasKey("Id");
 
                     b.ToTable("UserProfile", (string)null);
                 });
 
-            modelBuilder.Entity("CCRS.User.API.Models.Models.Address", b =>
+            modelBuilder.Entity("CCRS.User.API.Models.Address", b =>
                 {
-                    b.HasOne("CCRS.User.API.Models.Models.UserProfile", "UserProfile")
+                    b.HasOne("CCRS.User.API.Models.UserProfile", "UserProfile")
                         .WithOne("Address")
-                        .HasForeignKey("CCRS.User.API.Models.Models.Address", "UserProfileId")
+                        .HasForeignKey("CCRS.User.API.Models.Address", "UserProfileId")
                         .IsRequired();
 
                     b.Navigation("UserProfile");
                 });
 
-            modelBuilder.Entity("CCRS.User.API.Models.Models.UserProfile", b =>
+            modelBuilder.Entity("CCRS.User.API.Models.UserProfile", b =>
                 {
                     b.OwnsOne("CCRS.Core.DomainObjects.Cpf", "Cpf", b1 =>
                         {
@@ -110,8 +125,8 @@ namespace CCRS.User.API.Migrations
 
                             b1.Property<string>("Number")
                                 .IsRequired()
-                                .HasMaxLength(11)
-                                .HasColumnType("varchar(11)")
+                                .HasMaxLength(15)
+                                .HasColumnType("varchar(15)")
                                 .HasColumnName("Cpf");
 
                             b1.HasKey("UserProfileId");
@@ -145,7 +160,7 @@ namespace CCRS.User.API.Migrations
                     b.Navigation("Email");
                 });
 
-            modelBuilder.Entity("CCRS.User.API.Models.Models.UserProfile", b =>
+            modelBuilder.Entity("CCRS.User.API.Models.UserProfile", b =>
                 {
                     b.Navigation("Address");
                 });

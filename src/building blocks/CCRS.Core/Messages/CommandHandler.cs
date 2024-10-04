@@ -14,7 +14,7 @@ namespace CCRS.Core.Messages
             ValidationResult = new ValidationResult();
         }
 
-        protected void AdddError(string message)
+        protected void AddError(string message)
         {
             ValidationResult.Errors.Add(new ValidationFailure(string.Empty, message));
         }
@@ -24,7 +24,7 @@ namespace CCRS.Core.Messages
             //todo try-catch do commit
             try
             {
-                if (!await uow.Commit()) AdddError("An error occurred during data persistence.");
+                if (!await uow.Commit()) AddError("An error occurred during data persistence.");
             }
             catch (Exception  ex)
             {

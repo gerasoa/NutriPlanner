@@ -53,7 +53,7 @@ namespace CCRS.Core.DomainObjects
 
         }
 
-        public const int cpfLength = 11;
+        public const int cpfLength = 15;
 
         public string Number { get; private set; }
 

@@ -16,7 +16,8 @@ namespace CCRS.WebApp.MVC.Configuration
 
             services.AddHttpClient<IAuthenticationService, AuthenticationService>();
 
-            
+            services.AddHttpClient<IUserProfileService, UserProfileService>();
+
             services.AddHttpClient<ICatalogService, CatalogService>()
                 .AddHttpMessageHandler<HttpClientAuthorizationDelegatingHandler>();
 

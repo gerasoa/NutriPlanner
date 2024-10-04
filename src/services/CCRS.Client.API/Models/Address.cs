@@ -1,6 +1,6 @@
 ﻿using CCRS.Core.DomainObjects;
 
-namespace CCRS.User.API.Models.Models
+namespace CCRS.User.API.Models
 {
     public class Address : Entity
     {
