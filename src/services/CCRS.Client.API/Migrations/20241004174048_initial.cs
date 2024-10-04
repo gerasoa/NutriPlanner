@@ -12,7 +12,7 @@ namespace CCRS.User.API.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "UserProfile",
+                name: "UserProfessional",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
@@ -30,7 +30,7 @@ namespace CCRS.User.API.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_UserProfile", x => x.Id);
+                    table.PrimaryKey("PK_UserProfessional", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -45,22 +45,22 @@ namespace CCRS.User.API.Migrations
                     Cep = table.Column<string>(type: "varchar(8)", nullable: false),
                     Cidade = table.Column<string>(type: "varchar(200)", nullable: false),
                     Estado = table.Column<string>(type: "varchar(2)", nullable: false),
-                    UserProfileId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    UserProfessionalId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Enderecos", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Enderecos_UserProfile_UserProfileId",
-                        column: x => x.UserProfileId,
-                        principalTable: "UserProfile",
+                        name: "FK_Enderecos_UserProfessional_UserProfessionalId",
+                        column: x => x.UserProfessionalId,
+                        principalTable: "UserProfessional",
                         principalColumn: "Id");
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Enderecos_UserProfileId",
+                name: "IX_Enderecos_UserProfessionalId",
                 table: "Enderecos",
-                column: "UserProfileId",
+                column: "UserProfessionalId",
                 unique: true);
         }
 
@@ -71,7 +71,7 @@ namespace CCRS.User.API.Migrations
                 name: "Enderecos");
 
             migrationBuilder.DropTable(
-                name: "UserProfile");
+                name: "UserProfessional");
         }
     }
 }

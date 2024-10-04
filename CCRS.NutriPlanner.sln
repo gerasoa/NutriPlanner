@@ -29,13 +29,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CCRS.WebAPI.Core", "src\bui
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{F65C2777-CF92-46F9-8791-12E5DC0462A1}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UserProfile", "UserProfile", "{1F8989D0-C4FA-4BC8-8528-F3B0AE812932}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UserProfessional", "UserProfessional", "{1F8989D0-C4FA-4BC8-8528-F3B0AE812932}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CCRS.User.API", "src\services\CCRS.Client.API\CCRS.User.API.csproj", "{C034A059-B70B-4B3F-BF90-AF38051F6FCA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CCRS.UserProfessional.API", "src\services\CCRS.Client.API\CCRS.UserProfessional.API.csproj", "{C034A059-B70B-4B3F-BF90-AF38051F6FCA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MessageBuss", "MessageBuss", "{6F6B02FD-D03B-461D-9493-0E85C843889B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CCRS.MessageBus", "src\building blocks\CCRS.MessageBus\CCRS.MessageBus.csproj", "{B22B17B7-FB12-41DC-9BF1-40CB345923B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CCRS.MessageBus", "src\building blocks\CCRS.MessageBus\CCRS.MessageBus.csproj", "{B22B17B7-FB12-41DC-9BF1-40CB345923B4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

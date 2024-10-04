@@ -1,6 +1,6 @@
 ﻿namespace CCRS.User.API.Models
 {
-    public class UserProfileDetailsViewModel
+    public class UserProfessionalDetailsViewModel
     {
         public Guid Id { get; set; }
         public string NutritionistCouncilNumber { get; set; }

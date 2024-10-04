@@ -38,11 +38,11 @@ namespace CCRS.User.API.Models.Application.Commands
             {
                 RuleFor(c => c.Id)
                     .NotEqual(Guid.Empty)
-                    .WithMessage("Invalid UserProfile Id");
+                    .WithMessage("Invalid UserProfessional Id");
 
                 RuleFor(c => c.Id)
                     .NotEmpty()
-                    .WithMessage("The UserProfile name is missing");
+                    .WithMessage("The UserProfessional name is missing");
 
                 RuleFor(c => c.Cpf)
                     .Must(IsValidCpf)

@@ -3,9 +3,9 @@ using System.Diagnostics;
 
 namespace CCRS.User.API.Models
 {
-    public class UserProfile : Entity, IAggregateRoot
+    public class UserProfessional : Entity, IAggregateRoot
     {
-        public UserProfile(Guid id, string name, string email, string cpf)
+        public UserProfessional(Guid id, string name, string email, string cpf)
         {
             Id = id;
             Name = name;
@@ -15,7 +15,7 @@ namespace CCRS.User.API.Models
         }
            
         //EF Relation
-        public UserProfile()
+        public UserProfessional()
         {
 
         }

@@ -8,7 +8,7 @@ namespace CCRS.User.API.Models.Configuration
     {
         public static void AddApiConfiguration(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddDbContext<UserProfileContext>(option =>
+            services.AddDbContext<UserProfessionalContext>(option =>
                 option.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 
             services.AddControllers();

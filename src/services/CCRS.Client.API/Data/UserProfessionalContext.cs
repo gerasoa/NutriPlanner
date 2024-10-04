@@ -9,11 +9,11 @@ using System.Data;
 
 namespace CCRS.User.API.Models.Data
 {
-    public sealed class UserProfileContext : DbContext, IUnifOfWork
+    public sealed class UserProfessionalContext : DbContext, IUnifOfWork
     {
         private readonly IMediatorHandler _mediatorHandler;
 
-        public UserProfileContext(DbContextOptions<UserProfileContext> options, IMediatorHandler mediatorHandler) 
+        public UserProfessionalContext(DbContextOptions<UserProfessionalContext> options, IMediatorHandler mediatorHandler) 
             : base(options)
         {
             _mediatorHandler = mediatorHandler;
@@ -22,7 +22,7 @@ namespace CCRS.User.API.Models.Data
         }
 
         // Table mappings EF
-        public DbSet<UserProfile> UserProfile { get; set; }
+        public DbSet<UserProfessional> UserProfessional { get; set; }
         public DbSet<Address> Address { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -37,7 +37,7 @@ namespace CCRS.User.API.Models.Data
             foreach (var relationship in modelBuilder.Model.GetEntityTypes()
                 .SelectMany(e => e.GetForeignKeys())) relationship.DeleteBehavior = DeleteBehavior.ClientSetNull;
 
-            modelBuilder.ApplyConfigurationsFromAssembly(typeof(UserProfileContext).Assembly);
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(UserProfessionalContext).Assembly);
         }
 
         public async Task<bool> Commit()
